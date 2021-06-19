@@ -17,7 +17,7 @@ const ProjectsSection = () => {
         "Marketplace for independent artists to buy professional demo tracks.",
       backgroundColorClass: "bg-moonglade-water",
       projectLink: "",
-      image: "https://picsum.photos/1260/1350",
+      image: "https://picsum.photos/1200/1450",
     },
     {
       id: "3",

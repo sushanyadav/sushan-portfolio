@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { useEffect } from "react";
+import { gsap, Power3 } from "gsap";
 
 import Button from "components/Button";
 import { DownloadIcon } from "components/Icons";
@@ -33,8 +35,16 @@ const NavItems = () => {
 };
 
 const Header = () => {
+  useEffect(() => {
+    gsap.from(".navigation", 0.8, {
+      y: -90,
+      autoAlpha: 0,
+      ease: Power3.easeInOut,
+    });
+  }, []);
+
   return (
-    <section className="bg-gray-50 h-24">
+    <section className="bg-gray-50 navigation h-24">
       <header className="container h-full flex justify-between">
         <NavItems />
         <div className="flex  flex-col items-center justify-center">

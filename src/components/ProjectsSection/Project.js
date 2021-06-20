@@ -10,11 +10,11 @@ const Project = ({
   backgroundColorClass,
   projectLink,
   image,
+  addToRefs,
 }) => {
   return (
     <div
-      className={`${backgroundColorClass} overflow-hidden p-14 pb-0 flex lg:gap-10 xl:gap-20 rounded-3xl`}
-      style={{ minHeight: "484px" }}
+      className={`${backgroundColorClass} content overflow-hidden p-14 pb-0 flex lg:gap-10 xl:gap-20 rounded-3xl`}
     >
       <div className="lg:w-full xl:w-5/12">
         <h3 className="text-gray-900 font-extrabold text-4.5xl">
@@ -31,19 +31,23 @@ const Project = ({
           </Link>
         </div>
       </div>
-
-      <Image
-        src={image}
-        alt={primaryText}
-        height={484}
-        width={676}
-        className="rounded-t-lg object-cover object-center"
-      />
+      <div className="overflow-hidden rounded-t-lg relative top-2 h-full">
+        <div ref={addToRefs} className="bg-black z-10 absolute inset-0" />
+        <Image
+          src={image}
+          alt={primaryText}
+          height={484}
+          width={676}
+          className="object-cover object-center "
+        />
+      </div>
     </div>
   );
 };
 
-Project.defaultProps = {};
+Project.defaultProps = {
+  addToRefs: () => {},
+};
 
 Project.propTypes = {
   primaryText: PropTypes.string.isRequired,
@@ -51,6 +55,7 @@ Project.propTypes = {
   backgroundColorClass: PropTypes.string.isRequired,
   projectLink: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  addToRefs: PropTypes.func,
 };
 
 export default Project;

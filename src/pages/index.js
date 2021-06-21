@@ -22,20 +22,24 @@ const HomePage = () => {
 
   const animateRevealRefs = (updateLoco) => {
     revealRef.current.forEach((el) => {
-      const overlay = el.lastChild.firstChild;
-      const image = el.lastChild.lastChild;
+      const imageWrapper = el.lastChild.lastChild.firstChild;
+      const image = el.lastChild.lastChild.lastChild.lastChild;
       const primaryTextEl = el.firstChild.firstChild.firstChild;
       const secondaryTextEl = el.firstChild.children[1].firstChild;
       const button = el.firstChild.lastChild;
 
       const tl = gsap
         .timeline({})
-        .from(primaryTextEl, {
-          y: 90,
-          autoAlpha: 0,
-          ease: Power3.easeInOut,
-          duration: 0.6,
-        })
+        .from(
+          primaryTextEl,
+          {
+            y: 90,
+            autoAlpha: 0,
+            ease: Power3.easeInOut,
+            duration: 0.6,
+          },
+          "-=0.1"
+        )
         .from(
           secondaryTextEl,
           {
@@ -55,32 +59,22 @@ const HomePage = () => {
           },
           "-=0.4"
         )
-        .from(
-          overlay,
-          {
-            width: "100%",
-            duration: 0.6,
-          },
-          "-=1"
+        .fromTo(
+          imageWrapper,
+          { yPercent: 100 },
+          { duration: 0.6, yPercent: 0, delay: 0.4 },
+          "-=1.2"
         )
-        .from(
-          image,
-          {
-            scale: 1.4,
-            duration: 0.5,
-
-            delay: 0.4,
-          },
-          "-=1.4"
-        );
+        .fromTo(image, { yPercent: -100 }, { duration: 0.6, yPercent: 0 }, "<");
 
       ScrollTrigger.create({
         trigger: el,
-        start: "top-=350 center",
+        start: "top-=300 center",
         scroller: mainItem.current,
         animation: tl,
         toggleActions: "play none none none",
       });
+
       // update loco
       updateLoco();
     });

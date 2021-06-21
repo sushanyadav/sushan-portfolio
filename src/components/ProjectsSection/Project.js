@@ -15,7 +15,7 @@ const Project = ({
   return (
     <div
       ref={addToRefs}
-      className={`${backgroundColorClass} content overflow-hidden p-14 pb-0 flex gap-10 xl:gap-20 rounded-3xl`}
+      className={`${backgroundColorClass} overflow-hidden p-14 pb-0 flex gap-10 xl:gap-20 rounded-3xl`}
     >
       <div className="w-full xl:w-5/12">
         <div className="overflow-hidden">
@@ -37,14 +37,15 @@ const Project = ({
         </div>
       </div>
       <div className="overflow-hidden rounded-t-lg relative top-2 h-full">
-        <div className="bg-black z-10 w-0 absolute inset-0" />
-        <Image
-          src={image}
-          alt={primaryText}
-          height={484}
-          width={676}
-          className="object-cover object-center "
-        />
+        <div className="overflow-hidden">
+          <Image
+            src={image}
+            alt={primaryText}
+            height={484}
+            width={676}
+            className="object-cover object-center "
+          />
+        </div>
       </div>
     </div>
   );

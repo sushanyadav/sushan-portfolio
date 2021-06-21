@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
     const { current: main } = mainItem;
 
     // removes initial flash
-    gsap.to(main, 0, { opacity: 1 });
+    gsap.to(main, 0.2, { opacity: 1 });
   }, []);
 
   return (

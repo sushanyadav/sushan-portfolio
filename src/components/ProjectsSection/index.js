@@ -8,7 +8,7 @@ const projects = [
     primaryText: "Athlane Dashboard",
     secondaryText: "Designed and defined a visual language for Athlane.",
     backgroundColorClass: "bg-violet",
-    projectLink: "",
+    projectLink: "#",
     image: "/images/Desktop.png",
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     secondaryText:
       "Marketplace for independent artists to buy professional demo tracks.",
     backgroundColorClass: "bg-moonglade-water",
-    projectLink: "",
+    projectLink: "#",
     image: "/images/Beats.png",
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     secondaryText:
       "Easy to use command pallette for collaborative browser, Sail.",
     backgroundColorClass: "bg-tuscan-sun",
-    projectLink: "",
+    projectLink: "#",
     image: "/images/Group.png",
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     primaryText: "Nucleus",
     secondaryText: "Nucleus helps you superpower your resumes.",
     backgroundColorClass: "bg-light-green",
-    projectLink: "",
+    projectLink: "#",
     image: "/images/Shell.png",
   },
 ];

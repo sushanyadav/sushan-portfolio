@@ -14,16 +14,21 @@ const Project = ({
 }) => {
   return (
     <div
-      className={`${backgroundColorClass} content overflow-hidden p-14 pb-0 flex lg:gap-10 xl:gap-20 rounded-3xl`}
+      ref={addToRefs}
+      className={`${backgroundColorClass} content overflow-hidden p-14 pb-0 flex gap-10 xl:gap-20 rounded-3xl`}
     >
-      <div className="lg:w-full xl:w-5/12">
-        <h3 className="text-gray-900 font-extrabold text-4.5xl">
-          {primaryText}
-        </h3>
-        <p className="text-black text-opacity-62 text-3.5xl font-medium mt-1">
-          {secondaryText}
-        </p>
-        <div className="mt-6">
+      <div className="w-full xl:w-5/12">
+        <div className="overflow-hidden">
+          <h3 className="text-gray-900 font-extrabold md:text-2xl lg:text-4xl xl:text-4.5xl">
+            {primaryText}
+          </h3>
+        </div>
+        <div className="overflow-hidden">
+          <p className="text-black text-opacity-62 md:text-xl lg:text-3xl xl:text-3.5xl font-medium mt-1">
+            {secondaryText}
+          </p>
+        </div>
+        <div className="my-6">
           <Link href={projectLink}>
             <a>
               <Button text="View Project" />
@@ -32,7 +37,7 @@ const Project = ({
         </div>
       </div>
       <div className="overflow-hidden rounded-t-lg relative top-2 h-full">
-        <div ref={addToRefs} className="bg-black z-10 absolute inset-0" />
+        <div className="bg-black z-10 w-0 absolute inset-0" />
         <Image
           src={image}
           alt={primaryText}

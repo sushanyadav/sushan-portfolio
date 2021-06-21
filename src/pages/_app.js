@@ -3,9 +3,8 @@ import { gsap } from "gsap";
 import Head from "next/head";
 import PropTypes from "prop-types";
 
-import Layout from "components/Layout";
-
 import "assets/css/globals.css";
+import "assets/css/locomotive-scroll.css";
 
 function MyApp({ Component, pageProps }) {
   const mainItem = useRef();
@@ -23,9 +22,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div ref={mainItem} className="opacity-0 font-custom">
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </div>
     </>
   );

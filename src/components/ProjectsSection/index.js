@@ -1,10 +1,6 @@
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { gsap } from "gsap";
-import { useRef, useEffect } from "react";
+import PropTypes from "prop-types";
 
 import Project from "./Project";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -43,47 +39,7 @@ const projects = [
   },
 ];
 
-const ProjectsSection = () => {
-  const revealRef = useRef();
-
-  revealRef.current = [];
-
-  useEffect(() => {
-    revealRef.current.forEach((el) => {
-      const image = el.parentElement.lastChild;
-
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: el.parentElement,
-            start: "center bottom",
-            ease: "power2",
-            toggleActions: "play none none none",
-          },
-        })
-        .to(el, {
-          width: "0px",
-          duration: 0.6,
-        })
-        .from(
-          image,
-          {
-            scale: 1.4,
-            duration: 0.5,
-            delay: 0.4,
-            stagger: 0.2,
-          },
-          "-=0.9"
-        );
-    });
-  }, []);
-
-  const addToRefs = (el) => {
-    if (el && !revealRef.current.includes(el)) {
-      revealRef.current.push(el);
-    }
-  };
-
+const ProjectsSection = ({ addToRefs }) => {
   return (
     <div className="container space-y-10">
       {projects.map(
@@ -110,6 +66,14 @@ const ProjectsSection = () => {
       )}
     </div>
   );
+};
+
+ProjectsSection.defaultProps = {
+  addToRefs: () => {},
+};
+
+ProjectsSection.propTypes = {
+  addToRefs: PropTypes.func,
 };
 
 export default ProjectsSection;

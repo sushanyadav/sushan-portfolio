@@ -33,7 +33,7 @@ const HomePage = () => {
         .from(
           primaryTextEl,
           {
-            y: 90,
+            yPercent: 100,
             autoAlpha: 0,
             ease: Power3.easeInOut,
             duration: 0.6,
@@ -43,7 +43,7 @@ const HomePage = () => {
         .from(
           secondaryTextEl,
           {
-            y: 90,
+            yPercent: 100,
             autoAlpha: 0,
             ease: Power3.easeInOut,
             duration: 0.9,

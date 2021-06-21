@@ -7,7 +7,7 @@ module.exports = {
       fontFamily: {
         custom: ["Inter", "sans-serif"],
       },
-      backgroundColor: {
+      colors: {
         violet: "#BDB7FF",
         "moonglade-water": "#69ffef",
         "tuscan-sun": "#ffd850",

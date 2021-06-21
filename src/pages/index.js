@@ -22,8 +22,8 @@ const HomePage = () => {
 
   const animateRevealRefs = (updateLoco) => {
     revealRef.current.forEach((el) => {
-      const imageWrapper = el.lastChild.lastChild.firstChild;
-      const image = el.lastChild.lastChild.lastChild.lastChild;
+      const imageWrapper = el.lastChild.firstChild;
+      const image = el.lastChild.lastChild.lastChild;
       const primaryTextEl = el.firstChild.firstChild.firstChild;
       const secondaryTextEl = el.firstChild.children[1].firstChild;
       const button = el.firstChild.lastChild;
@@ -59,17 +59,13 @@ const HomePage = () => {
           },
           "-=0.4"
         )
-        .fromTo(
-          imageWrapper,
-          { yPercent: 100 },
-          { duration: 0.6, yPercent: 0, delay: 0.4 },
-          "-=1.2"
-        )
-        .fromTo(image, { yPercent: -100 }, { duration: 0.6, yPercent: 0 }, "<");
+        .to(imageWrapper, { height: 0, duration: 0.6, delay: 0.4 }, "-=1.4")
+        .from(image, { duration: 0.6, opacity: 0, scale: 1.6 }, "<");
 
       ScrollTrigger.create({
         trigger: el,
-        start: "top-=300 center",
+        start: "top-=350 center",
+        end: "bottom-=100",
         scroller: mainItem.current,
         animation: tl,
         toggleActions: "play none none none",

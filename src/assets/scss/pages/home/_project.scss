@@ -1,0 +1,17 @@
+// mobile-phone 640px
+// tablet 768px
+// tablet-landscape 991px
+// large-desktop 1024px
+// extra-large-desktop 1280px
+
+.image-wrapper {
+  min-height: 214px;
+
+  @include min-break-point(large-desktop) {
+    min-height: 384px;
+  }
+
+  @include min-break-point(extra-large-desktop) {
+    min-height: 484px;
+  }
+}

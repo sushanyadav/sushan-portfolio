@@ -36,14 +36,15 @@ const Project = ({
           </Link>
         </div>
       </div>
-      <div className="overflow-hidden rounded-t-lg relative top-2">
+      <div className="overflow-hidden image-wrapper rounded-t-lg w-full xl:w-8/12 relative top-2">
         <div className={`${backgroundColorClass} absolute inset-0 z-10`}></div>
         <Image
           src={image}
           alt={primaryText}
-          height={484}
-          width={676}
-          className="object-cover object-center"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="top center"
+          quality={100}
         />
       </div>
     </div>

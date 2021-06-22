@@ -3,9 +3,7 @@ import { gsap } from "gsap";
 import Head from "next/head";
 import PropTypes from "prop-types";
 
-import "assets/css/globals.css";
-import "assets/css/locomotive-scroll.css";
-import "assets/css/cursor.css";
+import "assets/scss/main.scss";
 
 function MyApp({ Component, pageProps }) {
   const mainItem = useRef();

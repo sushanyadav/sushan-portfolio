@@ -1,5 +1,10 @@
 import PropTypes from "prop-types";
 
+import BeatsImage from "assets/images/Beats.png";
+import DesktopImage from "assets/images/Desktop.png";
+import GroupImage from "assets/images/Group.png";
+import ShellImage from "assets/images/Shell.png";
+
 import Project from "./Project";
 
 const projects = [
@@ -9,7 +14,7 @@ const projects = [
     secondaryText: "Designed and defined a visual language for Athlane.",
     backgroundColorClass: "bg-violet",
     projectLink: "#",
-    image: "/images/Desktop.png",
+    image: DesktopImage,
   },
   {
     id: "2",
@@ -18,7 +23,7 @@ const projects = [
       "Marketplace for independent artists to buy professional demo tracks.",
     backgroundColorClass: "bg-moonglade-water",
     projectLink: "#",
-    image: "/images/Beats.png",
+    image: BeatsImage,
   },
   {
     id: "3",
@@ -27,7 +32,7 @@ const projects = [
       "Easy to use command pallette for collaborative browser, Sail.",
     backgroundColorClass: "bg-tuscan-sun",
     projectLink: "#",
-    image: "/images/Group.png",
+    image: GroupImage,
   },
   {
     id: "4",
@@ -35,7 +40,7 @@ const projects = [
     secondaryText: "Nucleus helps you superpower your resumes.",
     backgroundColorClass: "bg-light-green",
     projectLink: "#",
-    image: "/images/Shell.png",
+    image: ShellImage,
   },
 ];
 

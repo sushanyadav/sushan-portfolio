@@ -58,15 +58,15 @@ const Main = () => {
   }, []);
 
   return (
-    <div className="mt-xl mb-lg container text-gray-900">
-      <h1 className="font-black  overflow-hidden text-8.5xl">
+    <div className="mt-8 md:mt-xl md:mb-lg mb-10  container text-gray-900">
+      <h1 className="font-black  overflow-hidden text-4.5xl md:text-8.5xl">
         <div className="overflow-hidden ">
           <span className="hi-text inline-block">Hi!</span>
         </div>
 
         <span className="i-am-text inline-block">I&apos;m </span>
         <span
-          className="italic sushan-text inline-block text-black ml-6"
+          className="italic tracking-wider md:tracking-normal sushan-text inline-block text-black ml-3 md:ml-6"
           style={{
             WebkitTextStroke: "1px black",
             WebkitTextFillColor: "white",
@@ -76,12 +76,12 @@ const Main = () => {
         </span>
       </h1>
       <div className="overflow-hidden ">
-        <h2 className="mt-5 front-end-text text-5xl text-gray-600 font-bold  leading-extra-loose">
+        <h2 className="mt-5 front-end-text text-2xl md:text-5xl text-gray-600 font-bold  md:leading-extra-loose">
           Frontend Developer based in Nepal.
         </h2>
       </div>
       <div className=" overflow-hidden ">
-        <p className="mt-16 secondary-text text-4.5xl">
+        <p className="md:mt-16 mt-6 secondary-text text-xl md:text-4.5xl">
           Currently, looking for the next opportunity to create beautiful user
           interfaces.
         </p>

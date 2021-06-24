@@ -1,14 +1,17 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Head from "next/head";
 import PropTypes from "prop-types";
 
+import { Cursor } from "components/Icons";
+
 import "assets/scss/main.scss";
 
 function MyApp({ Component, pageProps }) {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
   const mainItem = useRef();
   const cursorItem = useRef();
-  const followerItem = useRef();
 
   useEffect(() => {
     const { current: main } = mainItem;
@@ -19,10 +22,6 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const { current: cursor } = cursorItem;
-    const { current: follower } = followerItem;
-
-    let posX = 0;
-    let posY = 0;
 
     let mouseX = 0;
     let mouseY = 0;
@@ -30,16 +29,6 @@ function MyApp({ Component, pageProps }) {
     gsap.to({}, 0.016, {
       repeat: -1,
       onRepeat: function () {
-        posX += (mouseX - posX) / 9;
-        posY += (mouseY - posY) / 9;
-
-        gsap.set(follower, {
-          css: {
-            left: posX - 12,
-            top: posY - 12,
-          },
-        });
-
         gsap.set(cursor, {
           css: {
             left: mouseX,
@@ -58,18 +47,16 @@ function MyApp({ Component, pageProps }) {
 
   const onEnter = () => {
     const { current: cursor } = cursorItem;
-    const { current: follower } = followerItem;
 
-    cursor.classList.add("active");
-    follower.classList.add("active");
+    cursor.classList.remove("cursor");
+    cursor.classList.add("hidden");
   };
 
   const onLeave = () => {
     const { current: cursor } = cursorItem;
-    const { current: follower } = followerItem;
 
-    cursor.classList.remove("active");
-    follower.classList.remove("active");
+    cursor.classList.remove("hidden");
+    cursor.classList.add("cursor");
   };
 
   useEffect(() => {
@@ -89,18 +76,28 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
+  useEffect(() => {
+    if (document) {
+      if ("ontouchstart" in document.documentElement) {
+        setIsTouchDevice(true);
+      }
+    }
+  }, []);
+
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className="cursor" ref={cursorItem}></div>
-      <div className="cursor-follower" ref={followerItem}></div>
+
       <div
         ref={mainItem}
-        style={{ cursor: "none" }}
+        style={{ cursor: !isTouchDevice ? "none" : "auto" }}
         className="opacity-0 font-custom"
       >
+        <div className="cursor" ref={cursorItem}>
+          <Cursor isTouchDevice={isTouchDevice} />
+        </div>
         <Component {...pageProps} />
       </div>
     </>

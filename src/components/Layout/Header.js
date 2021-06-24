@@ -8,25 +8,25 @@ import { DownloadIcon } from "components/Icons";
 const NavItems = () => {
   return (
     <nav>
-      <ul className="flex items-center space-x-xl h-full font-medium text-gray-900 text-xl leading-8">
+      <ul className="flex items-center space-x-4 sm:space-x-12 md:space-x-xl h-full font-medium text-gray-900 text-xs sm:text-base md:text-xl leading-8">
         <li className="font-bold">
           <Link href="/">
-            <a>Home</a>
+            <a className="py-8">Home</a>
           </Link>
         </li>
         <li>
           <Link href="/">
-            <a>Projects</a>
+            <a className="py-8">Projects</a>
           </Link>
         </li>
         <li>
           <Link href="/">
-            <a>About</a>
+            <a className="py-8">About</a>
           </Link>
         </li>
         <li>
           <Link href="/">
-            <a>Contact</a>
+            <a className="py-8">Contact</a>
           </Link>
         </li>
       </ul>
@@ -44,11 +44,11 @@ const Header = () => {
   }, []);
 
   return (
-    <section className="bg-gray-50 navigation h-24">
+    <section className="bg-gray-50 navigation h-14.5 sm:h-24">
       <header className="container h-full flex justify-between">
         <NavItems />
         <div className="flex  flex-col items-center justify-center">
-          <Button Icon={DownloadIcon} text="Resume" />
+          <Button Icon={DownloadIcon} text="Resume" paddingClass="py-1" />
         </div>
       </header>
     </section>

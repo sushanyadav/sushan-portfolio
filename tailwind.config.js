@@ -13,7 +13,9 @@ module.exports = {
         "tuscan-sun": "#ffd850",
         "light-green": "#45F8AD",
       },
-
+      height: {
+        14.5: "60px",
+      },
       space: {
         xl: "72px",
       },

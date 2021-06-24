@@ -44,7 +44,7 @@ const Header = () => {
   }, []);
 
   return (
-    <section className="bg-gray-50 navigation h-14.5 sm:h-24">
+    <section className="bg-gray-50 navigation h-14.5 sm:h-24 overflow-y-hidden">
       <header className="container h-full flex justify-between">
         <NavItems />
         <div className="flex  flex-col items-center justify-center">

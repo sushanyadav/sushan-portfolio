@@ -33,6 +33,7 @@ module.exports = {
       fontSize: {
         "3.5xl": ["32px", "40px"],
         "4.5xl": ["40px", "56px"],
+        "6.5xl": ["64px", "64px"],
         "8.5xl": ["120px", "120px"],
       },
       lineHeight: {

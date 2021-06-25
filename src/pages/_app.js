@@ -63,10 +63,16 @@ function MyApp({ Component, pageProps }) {
     if (document) {
       const aTags = document.querySelectorAll("a");
       const buttonTags = document.querySelectorAll("button");
+      const linkIcons = document.querySelectorAll(".link-icon");
 
       aTags.forEach((a) => {
         a.addEventListener("mouseover", onEnter);
         a.addEventListener("mouseleave", onLeave);
+      });
+
+      linkIcons.forEach((linkIcon) => {
+        linkIcon.addEventListener("mouseover", onEnter);
+        linkIcon.addEventListener("mouseleave", onLeave);
       });
 
       buttonTags.forEach((button) => {

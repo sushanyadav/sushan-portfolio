@@ -81,9 +81,8 @@ export const AndSymbol = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="53"
       fill="none"
+      className="w-8 md:w-16 h-8 md:h-16"
       viewBox="0 0 48 53"
     >
       <path
@@ -98,10 +97,9 @@ export const MailIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
       fill="none"
       viewBox="0 0 48 48"
+      className="w-8 md:w-12 h-8 md:h-12 cursor-pointer link-icon"
     >
       <path
         stroke="#000"
@@ -129,6 +127,7 @@ export const TwitterIcon = () => {
       height="48"
       fill="none"
       viewBox="0 0 48 48"
+      className="w-8 md:w-12 h-8 md:h-12 cursor-pointer link-icon"
     >
       <path
         stroke="#000"

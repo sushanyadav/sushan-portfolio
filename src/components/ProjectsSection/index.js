@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
-import BeatsImage from "assets/images/Beats.png";
-import DesktopImage from "assets/images/Desktop.png";
-import GroupImage from "assets/images/Group.png";
-import ShellImage from "assets/images/Shell.png";
+import BeatsImage from "assets/images/projects/Beats.png";
+import DesktopImage from "assets/images/projects/Desktop.png";
+import GroupImage from "assets/images/projects/Group.png";
+import ShellImage from "assets/images/projects/Shell.png";
 
 import Project from "./Project";
 

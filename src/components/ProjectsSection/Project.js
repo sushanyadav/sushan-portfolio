@@ -15,7 +15,7 @@ const Project = ({
   return (
     <div
       ref={addToRefs}
-      className={`${backgroundColorClass} overflow-hidden p-5 pb-0 md:p-10 xl:p-14 md:pb-0 xl:pb-0  flex flex-col sm:flex-row gap-6 md:gap-10 xl:gap-20 rounded-3xl`}
+      className={`${backgroundColorClass} overflow-hidden opacity-0 p-5 pb-0 md:p-10 xl:p-14 md:pb-0 xl:pb-0  flex flex-col sm:flex-row gap-6 md:gap-10 xl:gap-20 rounded-3xl`}
     >
       <div className="w-full xl:w-5/12">
         <div className="overflow-hidden">

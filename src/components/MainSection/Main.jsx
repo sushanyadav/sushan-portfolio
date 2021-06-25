@@ -58,11 +58,11 @@ const Main = () => {
   }, []);
 
   return (
-    <div className="mt-8 md:mt-xl md:mb-lg mb-10  container text-gray-900">
+    <div className="mt-8 md:mt-xl md:mb-lg mb-10 container text-gray-900">
       <h1
         data-scroll
         data-scroll-speed="1"
-        className="font-black  overflow-hidden text-4.5xl md:text-8.5xl"
+        className="font-black overflow-hidden text-4.5xl md:text-8.5xl"
       >
         <div className="overflow-hidden ">
           <span className="hi-text inline-block">Hi!</span>
@@ -79,12 +79,12 @@ const Main = () => {
           Sushan.
         </span>
       </h1>
-      <div className="overflow-hidden ">
+      <div className="overflow-hidden">
         <h2 className="mt-5 front-end-text text-2xl md:text-5xl text-gray-600 font-bold  md:leading-extra-loose">
           Frontend Developer based in Nepal.
         </h2>
       </div>
-      <div className=" overflow-hidden ">
+      <div className=" overflow-hidden">
         <p className="md:mt-16 mt-6 secondary-text text-xl md:text-4.5xl">
           Currently, looking for the next opportunity to create beautiful user
           interfaces.

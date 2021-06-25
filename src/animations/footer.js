@@ -5,7 +5,8 @@ const animateFooterOnScroll = (
   revealRef,
   updateLoco,
   mainItem,
-  scrollToNavigation
+  scrollToNavigation,
+  scrollTo
 ) => {
   const tl = gsap
     .timeline({})
@@ -146,7 +147,7 @@ const animateFooterOnScroll = (
     toggleActions: "play none none none",
   });
 
-  scrollToNavigation(st);
+  scrollToNavigation(st, scrollTo);
 
   // update loco
   updateLoco();

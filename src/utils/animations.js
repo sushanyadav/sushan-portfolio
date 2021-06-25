@@ -7,10 +7,10 @@ export const setLocoMotiveWithScrollTrigger = (Default, el) => {
     el: el,
     smooth: true,
     smartphone: {
-      smooth: true,
+      smooth: false,
     },
     tablet: {
-      smooth: true,
+      smooth: false,
     },
   });
 

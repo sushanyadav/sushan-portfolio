@@ -15,17 +15,17 @@ const NavItems = () => {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="#projects">
             <a className="py-8">Projects</a>
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="#about">
             <a className="py-8">About</a>
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="#contact">
             <a className="py-8">Contact</a>
           </Link>
         </li>

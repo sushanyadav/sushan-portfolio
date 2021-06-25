@@ -9,7 +9,7 @@ const Footer = ({ footerRef }) => {
           Still scrolling? 🤔 Here’s a little more about me.
         </h2>
 
-        <section className="mt-7 space-y-6 md:space-y-10">
+        <section id="about" className="mt-7 space-y-6 md:space-y-10">
           <div className="text-lg leading-8 sm:leading-10 sm:text-2xl lg:text-3.5xl">
             <h3 className="footer-i-am-text">I am 👨‍ 💻</h3>
             <p
@@ -66,11 +66,11 @@ const Footer = ({ footerRef }) => {
             </span>
           </p>
         </section>
-        <div className="mt-10 flex space-x-12">
-          <div className="twitter-icon">
+        <div id="contact" className="mt-10 flex space-x-12">
+          <div className="twitter-icon" data-scroll data-scroll-speed=".5">
             <TwitterIcon />
           </div>
-          <div className="main-icon">
+          <div className="mail-icon" data-scroll data-scroll-speed=".5">
             <MailIcon />
           </div>
         </div>

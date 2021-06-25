@@ -59,7 +59,11 @@ const Main = () => {
 
   return (
     <div className="mt-8 md:mt-xl md:mb-lg mb-10  container text-gray-900">
-      <h1 className="font-black  overflow-hidden text-4.5xl md:text-8.5xl">
+      <h1
+        data-scroll
+        data-scroll-speed="1"
+        className="font-black  overflow-hidden text-4.5xl md:text-8.5xl"
+      >
         <div className="overflow-hidden ">
           <span className="hi-text inline-block">Hi!</span>
         </div>

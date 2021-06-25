@@ -6,7 +6,12 @@ export const setLocoMotiveWithScrollTrigger = (Default, el) => {
   const locoScroll = new Default({
     el: el,
     smooth: true,
-    smoothMobile: false,
+    smartphone: {
+      smooth: true,
+    },
+    tablet: {
+      smooth: true,
+    },
   });
 
   // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things

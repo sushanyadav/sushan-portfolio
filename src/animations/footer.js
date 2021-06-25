@@ -1,7 +1,12 @@
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const animateFooterOnScroll = (revealRef, updateLoco, mainItem) => {
+const animateFooterOnScroll = (
+  revealRef,
+  updateLoco,
+  mainItem,
+  scrollToNavigation
+) => {
   const tl = gsap
     .timeline({})
     .from(
@@ -117,7 +122,6 @@ const animateFooterOnScroll = (revealRef, updateLoco, mainItem) => {
     .from(
       ".twitter-icon",
       {
-        yPercent: 40,
         opacity: 0,
         ease: Power3.easeInOut,
         duration: 0.8,
@@ -125,9 +129,8 @@ const animateFooterOnScroll = (revealRef, updateLoco, mainItem) => {
       "-=0.6"
     )
     .from(
-      ".main-icon",
+      ".mail-icon",
       {
-        yPercent: 40,
         opacity: 0,
         ease: Power3.easeInOut,
         duration: 0.8,
@@ -135,13 +138,15 @@ const animateFooterOnScroll = (revealRef, updateLoco, mainItem) => {
       "-=0.6"
     );
 
-  ScrollTrigger.create({
+  const st = ScrollTrigger.create({
     trigger: revealRef.current,
     start: "top-=150 center",
     scroller: mainItem,
     animation: tl,
     toggleActions: "play none none none",
   });
+
+  scrollToNavigation(st);
 
   // update loco
   updateLoco();

@@ -46,7 +46,7 @@ const projects = [
 
 const ProjectsSection = ({ addToRefs }) => {
   return (
-    <div className="container space-y-10">
+    <div className="container space-y-10" id="projects">
       {projects.map(
         ({
           id,

@@ -2,10 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Head from "next/head";
 import PropTypes from "prop-types";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { Cursor } from "components/Icons";
 
 import "assets/scss/main.scss";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function MyApp({ Component, pageProps }) {
   const [isTouchDevice, setIsTouchDevice] = useState(false);

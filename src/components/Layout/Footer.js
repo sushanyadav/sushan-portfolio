@@ -1,4 +1,4 @@
-import { AndSymbol, TwitterIcon, MailIcon } from "components/Icons";
+import { TwitterIcon, MailIcon } from "components/Icons";
 import PropTypes from "prop-types";
 
 const Footer = ({ footerRef }) => {
@@ -36,8 +36,14 @@ const Footer = ({ footerRef }) => {
               TailwindCSS, SCSS, ES6, Redux, Redux Saga, Redux Thunk, Git ...
             </p>
           </div>
-          <div className="first-and-symbol text-6.5xl">
-            <AndSymbol />
+          <div
+            className="first-and-symbol font-bold text-6.5xl text-black"
+            style={{
+              WebkitTextStroke: "1px #FF9C55",
+              WebkitTextFillColor: "white",
+            }}
+          >
+            &
           </div>
           <div className="also-learning-text text-lg leading-8 sm:leading-10 sm:text-2xl lg:text-3.5xl">
             <h3>also learning 🤓 </h3>
@@ -51,8 +57,14 @@ const Footer = ({ footerRef }) => {
               </span>
             </p>
           </div>
-          <div className="second-and-symbol text-6.5xl">
-            <AndSymbol />
+          <div
+            className="second-and-symbol font-bold text-6.5xl text-black"
+            style={{
+              WebkitTextStroke: "1px #FF9C55",
+              WebkitTextFillColor: "white",
+            }}
+          >
+            &
           </div>
           <p
             className="looking-for-text text-lg leading-8 sm:leading-10 sm:text-2xl lg:text-3.5xl font-bold"

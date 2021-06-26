@@ -62,7 +62,7 @@ const Main = () => {
       <h1
         data-scroll
         data-scroll-speed="1"
-        className="font-black overflow-hidden text-4.5xl md:text-8.5xl"
+        className="font-bold overflow-hidden text-4.5xl md:text-6.5xl"
       >
         <div className="overflow-hidden ">
           <span className="hi-text inline-block">Hi!</span>
@@ -70,7 +70,7 @@ const Main = () => {
 
         <span className="i-am-text inline-block">I&apos;m </span>
         <span
-          className="italic tracking-wider md:tracking-normal sushan-text inline-block text-black ml-3 md:ml-6"
+          className="tracking-wider md:tracking-normal sushan-text inline-block text-black ml-3 md:ml-4"
           style={{
             WebkitTextStroke: "1px black",
             WebkitTextFillColor: "white",
@@ -80,12 +80,15 @@ const Main = () => {
         </span>
       </h1>
       <div className="overflow-hidden">
-        <h2 className="mt-5 front-end-text text-2xl md:text-5xl text-gray-600 font-bold  md:leading-extra-loose">
-          Frontend Developer based in Nepal.
+        <h2
+          style={{ color: "#8240ED" }}
+          className="mt-3 front-end-text text-2xl md:3.5xl font-bold"
+        >
+          Frontend Developer based in Nepal 🇳🇵
         </h2>
       </div>
       <div className=" overflow-hidden">
-        <p className="md:mt-16 mt-6 secondary-text text-xl md:text-4.5xl">
+        <p className="md:mt-8 mt-6 secondary-text text-xl leading-8 md:text-2xl">
           Currently, looking for the next opportunity to create beautiful user
           interfaces.
         </p>

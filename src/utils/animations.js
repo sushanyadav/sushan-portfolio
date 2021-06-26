@@ -2,18 +2,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // Scroll trigger with locomotive scroll
 
-export const setLocoMotiveWithScrollTrigger = (Default, el) => {
-  const locoScroll = new Default({
-    el: el,
-    smooth: true,
-    smartphone: {
-      smooth: false,
-    },
-    tablet: {
-      smooth: false,
-    },
-  });
-
+export const setLocoMotiveWithScrollTrigger = (locoScroll, el) => {
   // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
   ScrollTrigger.scrollerProxy(el, {
     scrollTop(value) {

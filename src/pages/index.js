@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { setLocoMotiveWithScrollTrigger } from "utils/animations";
@@ -9,11 +9,13 @@ import animateFooterOnScroll from "animations/footer";
 import Layout from "components/Layout";
 import Main from "components/MainSection/Main";
 import ProjectsSection from "components/ProjectsSection";
+import ScrollToTopButton from "components/ScrollToTopButton";
 
 const HomePage = () => {
   const mainItem = useRef();
   const revealRef = useRef();
   const footerRef = useRef();
+  const [showScrollToTopButton, setShowScrollToTopButton] = useState(true);
 
   revealRef.current = [];
 
@@ -70,8 +72,28 @@ const HomePage = () => {
 
   useEffect(() => {
     import("locomotive-scroll").then(({ default: Default }) => {
+      const locoScroll = new Default({
+        el: mainItem.current,
+        smooth: true,
+        scrollFromAnywhere: true,
+        smartphone: {
+          smooth: false,
+        },
+        tablet: {
+          smooth: false,
+        },
+      });
+
+      locoScroll.on("scroll", (obj) => {
+        if (obj.scroll.y < 10) {
+          setShowScrollToTopButton(false);
+        } else {
+          setShowScrollToTopButton(true);
+        }
+      });
+
       const updateLoco = setLocoMotiveWithScrollTrigger(
-        Default,
+        locoScroll,
         mainItem.current
       );
 
@@ -80,12 +102,15 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div ref={mainItem}>
-      <Layout footerRef={footerRef}>
-        <Main />
-        <ProjectsSection addToRefs={addToRefs} />
-      </Layout>
-    </div>
+    <>
+      <div ref={mainItem}>
+        <Layout footerRef={footerRef}>
+          <Main />
+          <ProjectsSection addToRefs={addToRefs} />
+        </Layout>
+      </div>
+      <ScrollToTopButton showScrollToTopButton={showScrollToTopButton} />
+    </>
   );
 };
 

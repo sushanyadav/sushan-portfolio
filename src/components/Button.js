@@ -9,7 +9,7 @@ const Button = ({ Icon, text, paddingClass }) => {
     <button
       className={`${paddingClassName} group flex items-center justify-center sm:py-3 sm:px-4 md:py-md px-3 md:px-lg text-sm sm:text-base md:text-lg rounded-large focus:outline-none focus:bg-gray-700 hover:bg-gray-800 transition-colors bg-black text-white sm:w-auto w-full`}
     >
-      <span className="mr-2.5 font-bold leading-5">{text}</span>
+      <span className="mr-2.5 leading-5">{text}</span>
       <Icon />
     </button>
   );

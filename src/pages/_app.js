@@ -97,6 +97,10 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          href="https://api.fontshare.com/css?f[]=general-sans@400,500,700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <div

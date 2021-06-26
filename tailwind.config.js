@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ["Inter", "sans-serif"],
+        custom: ["General Sans", "sans-serif"],
       },
       colors: {
         violet: "#BDB7FF",
@@ -15,6 +15,7 @@ module.exports = {
       },
       height: {
         14.5: "60px",
+        30: "120px",
       },
       space: {
         xl: "72px",

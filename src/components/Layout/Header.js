@@ -4,17 +4,12 @@ import { gsap, Power3 } from "gsap";
 import PropTypes from "prop-types";
 
 import Button from "components/Button";
-import { DownloadIcon } from "components/Icons";
+import { DownloadIcon, MoonIcon } from "components/Icons";
 
 const NavItems = () => {
   return (
-    <nav>
-      <ul className="flex items-center space-x-4 sm:space-x-12 md:space-x-xl h-full font-medium text-gray-900 text-xs sm:text-base md:text-xl leading-8">
-        <li className="font-bold">
-          <Link href="/">
-            <a className="py-8">Home</a>
-          </Link>
-        </li>
+    <nav className="flex-grow">
+      <ul className="flex items-center justify-center space-x-4 sm:space-x-12 md:space-x-16 h-full font-medium text-gray-900 text-xs md:text-base leading-8">
         <li>
           <Link href="#projects">
             <a className="py-8">Projects</a>
@@ -66,11 +61,22 @@ const Header = ({ scrollYPosition }) => {
   return (
     <section
       ref={header}
-      className="bg-gray-50 opacity-0 z-10 shadow-sm fixed top-0 left-0 w-full navigation overflow-y-hidden"
+      className="opacity-0 border-b bg-white border-gray-100 z-10 h-14.5 sm:h-22 fixed top-0 left-0 w-full navigation overflow-y-hidden"
     >
-      <header className="container h-full flex justify-between">
+      <header className="container h-full flex justify-between items-center">
+        <Link href="/">
+          <a>
+            <div
+              style={{
+                background: "linear-gradient(180deg, #FFA3D0 0%, #FFE1F0 100%)",
+              }}
+              className="rounded-full w-6 h-6 md:h-10 md:w-10 flex-none"
+            ></div>
+          </a>
+        </Link>
         <NavItems />
-        <div className="flex  flex-col items-center justify-center">
+        <div className="flex flex-none space-x-2 md:space-x-8 items-center justify-center">
+          <MoonIcon />
           <Button Icon={DownloadIcon} text="Resume" paddingClass="py-1" />
         </div>
       </header>

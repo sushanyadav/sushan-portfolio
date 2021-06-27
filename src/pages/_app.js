@@ -9,10 +9,10 @@ import ScrollToTopButton from "components/ScrollToTopButton";
 import Layout from "components/Layout";
 import Header from "components/Layout/Header";
 
-import useMediaQuery from "hooks/useMediaQuery";
+// import useMediaQuery from "hooks/useMediaQuery";
 
 import animateFooterOnScroll from "animations/footer";
-import animateHeaderOnScroll from "animations/header";
+// import animateHeaderOnScroll from "animations/header";
 
 import { setLocoMotiveWithScrollTrigger } from "utils/animations";
 import { scrollToFooter } from "utils/navigationScroll";
@@ -23,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function MyApp({ Component, pageProps }) {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const [showScrollToTopButton, setShowScrollToTopButton] = useState(true);
+  const [showScrollToTopButton, setShowScrollToTopButton] = useState(false);
   const [scrollYPosition, setScrollYPosition] = useState(0);
 
   const componentRef = useRef();
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
   const cursorItem = useRef();
   const footerRef = useRef();
 
-  const isSmallDevice = useMediaQuery("(max-width: 576px)"); // returns true if a user is using mobile-phone
+  // const isSmallDevice = useMediaQuery("(max-width: 576px)"); // returns true if a user is using mobile-phone
 
   useEffect(() => {
     const { current: main } = scrollItem;
@@ -45,6 +45,8 @@ function MyApp({ Component, pageProps }) {
 
     let mouseX = 0;
     let mouseY = 0;
+
+    gsap.to(cursor, 0, { opacity: 1 });
 
     gsap.to({}, 0.016, {
       repeat: -1,
@@ -120,7 +122,17 @@ function MyApp({ Component, pageProps }) {
         firefoxMultiplier: 50,
       });
 
-      // for scroll to top component visibility state
+      //* for scroll to top component visibility state
+      // for mobile phones
+      window.onscroll = function (e) {
+        if (window.scrollY < 20) {
+          setShowScrollToTopButton(false);
+        } else {
+          setShowScrollToTopButton(true);
+        }
+      };
+
+      // for PC
       locoScroll.on("scroll", (obj) => {
         setScrollYPosition(obj.scroll.y);
         if (obj.scroll.y < 10) {
@@ -147,7 +159,7 @@ function MyApp({ Component, pageProps }) {
         scrollTo
       );
 
-      animateHeaderOnScroll(updateLoco, scrollItem.current, isSmallDevice);
+      //  animateHeaderOnScroll(updateLoco, scrollItem.current, isSmallDevice);
 
       if (componentRef.current?.handlePageAnimations) {
         componentRef.current.handlePageAnimations(updateLoco);
@@ -164,27 +176,25 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      {/* cursor */}
-      <div className="cursor" ref={cursorItem}>
-        <Cursor isTouchDevice={isTouchDevice} />
+      <div style={{ cursor: !isTouchDevice ? "none" : "auto" }}>
+        {/* smooth scroll component */}
+        <Header scrollYPosition={scrollYPosition} />
+        {/* cursor */}
+        <div className="cursor opacity-0" ref={cursorItem}>
+          <Cursor isTouchDevice={isTouchDevice} />
+        </div>
+        <div ref={scrollItem} className="opacity-0 font-custom">
+          <Layout scrollYPosition={scrollYPosition} footerRef={footerRef}>
+            <Component
+              scrollItem={scrollItem}
+              ref={componentRef}
+              {...pageProps}
+            />
+          </Layout>
+        </div>
+        {/* scroll to top button */}
+        <ScrollToTopButton showScrollToTopButton={showScrollToTopButton} />
       </div>
-      {/* smooth scroll component */}
-      <Header scrollYPosition={scrollYPosition} />
-      <div
-        ref={scrollItem}
-        style={{ cursor: !isTouchDevice ? "none" : "auto" }}
-        className="opacity-0 font-custom"
-      >
-        <Layout scrollYPosition={scrollYPosition} footerRef={footerRef}>
-          <Component
-            scrollItem={scrollItem}
-            ref={componentRef}
-            {...pageProps}
-          />
-        </Layout>
-      </div>
-      {/* scroll to top button */}
-      <ScrollToTopButton showScrollToTopButton={showScrollToTopButton} />
     </>
   );
 }
@@ -192,7 +202,7 @@ function MyApp({ Component, pageProps }) {
 MyApp.defaultProps = {};
 
 MyApp.propTypes = {
-  Component: PropTypes.func.isRequired,
+  Component: PropTypes.object.isRequired,
   pageProps: PropTypes.object.isRequired,
 };
 

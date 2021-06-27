@@ -34,7 +34,7 @@ export const scrollToProjects = (st, scrollTo) => {
   const projectsEl = document.getElementById("projects");
   const projectsDistance = projectsEl.getBoundingClientRect().top - 40;
 
-  const projectNav = document.querySelectorAll("nav ul li")[1];
+  const projectNav = document.querySelectorAll("nav ul li")[0];
 
   // project nav item
   projectNav.addEventListener("click", function (e) {

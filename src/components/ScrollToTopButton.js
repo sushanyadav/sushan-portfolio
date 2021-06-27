@@ -20,9 +20,9 @@ const ScrollToTopButton = ({ showScrollToTopButton }) => {
         isLoaded && showScrollToTopButton
           ? "opacity-1"
           : "opacity-0 pointer-events-none"
-      }  fixed bottom-14 xl:bottom-8 right-4 xl:right-32 duration-500 transition-opacity`}
+      }  fixed z-50 bottom-14 xl:bottom-8 right-4 xl:right-32 duration-500 transition-opacity`}
     >
-      <button className="bg-yellow-700 shadow-md hover:bg-yellow-800 transition rounded-full  cursor-pointer h-8 w-8 flex items-center justify-center">
+      <button className="bg-gray-100 opacity-70 shadow-md hover:bg-gray-200 transition rounded-full  cursor-pointer h-8 w-8 flex items-center justify-center">
         {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"

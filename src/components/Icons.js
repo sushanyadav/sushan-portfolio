@@ -4,7 +4,7 @@ export const DownloadIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="md:w-6 md:h-6 sm:w-4 sm:h-4 w-3 h-3"
+      className="md:w-4 md:h-4 w-3 h-3"
       fill="none"
       viewBox="0 0 24 24"
     >
@@ -19,11 +19,31 @@ export const DownloadIcon = () => {
   );
 };
 
+export const MoonIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      fill="none"
+      viewBox="0 0 20 20"
+    >
+      <path
+        stroke="#52525B"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        d="M17.5 10.658A7.5 7.5 0 119.342 2.5a5.833 5.833 0 008.158 8.158v0z"
+      ></path>
+    </svg>
+  );
+};
+
 export const GoToIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="md:w-6 md:h-6 w-4 h-4 group-hover:rotate-45 transition-transform"
+      className="md:w-4 md:h-4 w-3 h-3 group-hover:rotate-45 transition-transform"
       fill="none"
       viewBox="0 0 24 24"
     >

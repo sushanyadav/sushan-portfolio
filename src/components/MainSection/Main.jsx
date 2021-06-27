@@ -62,7 +62,7 @@ const Main = () => {
   return (
     <>
       {/* spacer for navbar */}
-      <div className="h-14.5 sm:h-24" />
+      <div className="h-14.5 sm:h-22" />
       <main className="mt-8 md:mt-lg md:mb-lg mb-10 container text-gray-900">
         <h1 className="font-bold overflow-hidden text-4.5xl md:text-6.5xl">
           <div className="overflow-hidden ">

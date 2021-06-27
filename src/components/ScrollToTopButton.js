@@ -23,7 +23,7 @@ const ScrollToTopButton = ({ showScrollToTopButton }) => {
       }  fixed bottom-14 xl:bottom-8 right-4 xl:right-32 duration-500 transition-opacity`}
     >
       <button className="bg-yellow-700 shadow-md hover:bg-yellow-800 transition rounded-full  cursor-pointer h-8 w-8 flex items-center justify-center">
-        <svg
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
           fill="none"
@@ -36,7 +36,7 @@ const ScrollToTopButton = ({ showScrollToTopButton }) => {
             strokeWidth="2"
             d="M7 11l5-5m0 0l5 5m-5-5v12"
           />
-        </svg>
+        </svg> */}
       </button>
     </div>
   );

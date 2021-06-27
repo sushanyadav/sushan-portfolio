@@ -3,15 +3,15 @@ import { gsap } from "gsap";
 export const scrollToFooter = (st, scrollTo) => {
   // navigation Scroll
   gsap.utils.toArray("nav a").forEach(function (a) {
+    // contact
+    const contactEl = document.getElementById("contact");
+    const contactDistance = contactEl.getBoundingClientRect().top - 40;
+
+    // about
+    const aboutEl = document.getElementById("about");
+    const aboutDistance = aboutEl.getBoundingClientRect().top - 40;
+
     a.addEventListener("click", function (e) {
-      // about
-      const contactEl = document.getElementById("contact");
-      const contactDistance = contactEl.getBoundingClientRect().top - 40;
-
-      // contact
-      const aboutEl = document.getElementById("about");
-      const aboutDistance = aboutEl.getBoundingClientRect().top - 40;
-
       e.preventDefault();
 
       switch (e.target.innerText) {

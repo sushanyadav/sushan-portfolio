@@ -29,7 +29,9 @@ module.exports = {
       },
       margin: {
         lg: "72px",
-        xl: "77px",
+      },
+      transitionProperty: {
+        height: "height",
       },
       fontSize: {
         "3.5xl": ["32px", "40px"],

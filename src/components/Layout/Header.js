@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { gsap, Power3 } from "gsap";
+import PropTypes from "prop-types";
 
 import Button from "components/Button";
 import { DownloadIcon } from "components/Icons";
@@ -34,8 +35,13 @@ const NavItems = () => {
   );
 };
 
-const Header = () => {
+const Header = ({ scrollYPosition }) => {
+  const header = useRef();
+
   useEffect(() => {
+    // removes initial flash
+    gsap.to(".navigation", 0, { opacity: 1 });
+
     gsap.from(".navigation", 0.8, {
       y: -90,
       autoAlpha: 0,
@@ -43,8 +49,25 @@ const Header = () => {
     });
   }, []);
 
+  // useEffect(() => {
+  //   if (document) {
+  //     const projectEl = document.getElementById("projects");
+  //     const projectDistance = projectEl.getBoundingClientRect().top - 40;
+
+  // console.log(projectDistance, "project distance");
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  // console.log(scrollYPosition, "scrollYPosition");
+  // }, [scrollYPosition]);
+
+  // 60px 96px
   return (
-    <section className="bg-gray-50 navigation h-14.5 sm:h-24 overflow-y-hidden">
+    <section
+      ref={header}
+      className="bg-gray-50 opacity-0 z-10 shadow-sm fixed top-0 left-0 w-full navigation overflow-y-hidden"
+    >
       <header className="container h-full flex justify-between">
         <NavItems />
         <div className="flex  flex-col items-center justify-center">
@@ -53,6 +76,12 @@ const Header = () => {
       </header>
     </section>
   );
+};
+
+Header.defaultProps = {};
+
+Header.propTypes = {
+  scrollYPosition: PropTypes.number.isRequired,
 };
 
 export default Header;

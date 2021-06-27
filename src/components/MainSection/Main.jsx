@@ -57,43 +57,45 @@ const Main = () => {
       );
   }, []);
 
-  return (
-    <div className="mt-8 md:mt-xl md:mb-lg mb-10 container text-gray-900">
-      <h1
-        data-scroll
-        data-scroll-speed="1"
-        className="font-bold overflow-hidden text-4.5xl md:text-6.5xl"
-      >
-        <div className="overflow-hidden ">
-          <span className="hi-text inline-block">Hi!</span>
-        </div>
+  //
 
-        <span className="i-am-text inline-block">I&apos;m </span>
-        <span
-          className="tracking-wider md:tracking-normal sushan-text inline-block text-black ml-3 md:ml-4"
-          style={{
-            WebkitTextStroke: "1px black",
-            WebkitTextFillColor: "white",
-          }}
-        >
-          Sushan.
-        </span>
-      </h1>
-      <div className="overflow-hidden">
-        <h2
-          style={{ color: "#8240ED" }}
-          className="mt-3 front-end-text text-2xl md:3.5xl font-bold"
-        >
-          Frontend Developer based in Nepal 🇳🇵
-        </h2>
-      </div>
-      <div className=" overflow-hidden">
-        <p className="md:mt-8 mt-6 secondary-text text-xl leading-8 md:text-2xl">
-          Currently, looking for the next opportunity to create beautiful user
-          interfaces.
-        </p>
-      </div>
-    </div>
+  return (
+    <>
+      {/* spacer for navbar */}
+      <div className="h-14.5 sm:h-24" />
+      <main className="mt-8 md:mt-lg md:mb-lg mb-10 container text-gray-900">
+        <h1 className="font-bold overflow-hidden text-4.5xl md:text-6.5xl">
+          <div className="overflow-hidden ">
+            <span className="hi-text inline-block">Hi!</span>
+          </div>
+
+          <span className="i-am-text inline-block">I&apos;m </span>
+          <span
+            className="tracking-wider md:tracking-normal sushan-text inline-block text-black ml-3 md:ml-4"
+            style={{
+              WebkitTextStroke: "1px black",
+              WebkitTextFillColor: "white",
+            }}
+          >
+            Sushan.
+          </span>
+        </h1>
+        <div className="overflow-hidden">
+          <h2
+            style={{ color: "#8240ED" }}
+            className="mt-3 front-end-text text-2xl md:3.5xl font-bold"
+          >
+            Frontend Developer based in Nepal 🇳🇵
+          </h2>
+        </div>
+        <div className=" overflow-hidden">
+          <p className="md:mt-8 mt-6 secondary-text text-xl leading-8 md:text-2xl">
+            Currently, looking for the next opportunity to create beautiful user
+            interfaces.
+          </p>
+        </div>
+      </main>
+    </>
   );
 };
 

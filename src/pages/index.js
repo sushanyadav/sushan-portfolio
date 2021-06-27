@@ -1,21 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, forwardRef, useImperativeHandle } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import PropTypes from "prop-types";
 
-import { setLocoMotiveWithScrollTrigger } from "utils/animations";
-import { scrollToFooter, scrollToProjects } from "utils/navigationScroll";
+import { scrollToProjects } from "utils/navigationScroll";
 import { animateProjectsOnScroll, projectsTimeline } from "animations/projects";
-import animateFooterOnScroll from "animations/footer";
 
-import Layout from "components/Layout";
 import Main from "components/MainSection/Main";
 import ProjectsSection from "components/ProjectsSection";
-import ScrollToTopButton from "components/ScrollToTopButton";
 
-const HomePage = () => {
-  const mainItem = useRef();
+const HomePage = forwardRef((props, ref) => {
   const revealRef = useRef();
-  const footerRef = useRef();
-  const [showScrollToTopButton, setShowScrollToTopButton] = useState(true);
+
+  const { scrollItem } = props;
 
   revealRef.current = [];
 
@@ -41,7 +37,7 @@ const HomePage = () => {
     const st = ScrollTrigger.create({
       trigger: el,
       start: "top-=350 center",
-      scroller: mainItem.current,
+      scroller: scrollItem.current,
       animation: projectsTimeline(
         imageWrapper,
         image,
@@ -59,59 +55,27 @@ const HomePage = () => {
     return st;
   };
 
-  const animateRevealRefs = (updateLoco) => {
-    animateProjectsOnScroll(revealRef, updateLoco, projectScrollTrigger);
-    animateFooterOnScroll(
-      footerRef,
-      updateLoco,
-      mainItem.current,
-      scrollToFooter,
-      scrollTo
-    );
-  };
-
-  useEffect(() => {
-    import("locomotive-scroll").then(({ default: Default }) => {
-      const locoScroll = new Default({
-        el: mainItem.current,
-        smooth: true,
-        scrollFromAnywhere: true,
-        smartphone: {
-          smooth: false,
-        },
-        tablet: {
-          smooth: false,
-        },
-      });
-
-      locoScroll.on("scroll", (obj) => {
-        if (obj.scroll.y < 10) {
-          setShowScrollToTopButton(false);
-        } else {
-          setShowScrollToTopButton(true);
-        }
-      });
-
-      const updateLoco = setLocoMotiveWithScrollTrigger(
-        locoScroll,
-        mainItem.current
-      );
-
-      animateRevealRefs(updateLoco);
-    });
-  }, []);
+  useImperativeHandle(ref, () => ({
+    handlePageAnimations(updateLoco) {
+      animateProjectsOnScroll(revealRef, updateLoco, projectScrollTrigger);
+    },
+  }));
 
   return (
     <>
-      <div ref={mainItem}>
-        <Layout footerRef={footerRef}>
-          <Main />
-          <ProjectsSection addToRefs={addToRefs} />
-        </Layout>
-      </div>
-      <ScrollToTopButton showScrollToTopButton={showScrollToTopButton} />
+      <Main />
+      <ProjectsSection addToRefs={addToRefs} />
     </>
   );
+});
+
+HomePage.defaultProps = {};
+
+HomePage.propTypes = {
+  scrollItem: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
 };
 
 export default HomePage;

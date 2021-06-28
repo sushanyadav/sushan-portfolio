@@ -4,16 +4,16 @@ export const DownloadIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="md:w-4 md:h-4 w-3 h-3"
+      className="w-4 h-4 stroke-current"
       fill="none"
-      viewBox="0 0 24 24"
+      viewBox="0 0 16 16"
     >
       <path
         stroke="#fff"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
-        d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"
+        d="M14 10v2.667A1.334 1.334 0 0112.667 14H3.333A1.334 1.334 0 012 12.667V10M4.666 6.667L7.999 10l3.334-3.333M8 10V2"
       ></path>
     </svg>
   );
@@ -43,12 +43,11 @@ export const GoToIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="md:w-4 md:h-4 w-3 h-3 group-hover:rotate-45 transition-transform"
-      fill="none"
+      className="w-4 h-4 stroke-current group-hover:rotate-45 transition-transform"
       viewBox="0 0 24 24"
+      fill="none"
     >
       <path
-        stroke="#F0F0F0"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"
@@ -101,23 +100,23 @@ export const MailIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6 md:w-8 md:h-8 cursor-pointer link-icon"
       fill="none"
-      viewBox="0 0 48 48"
-      className="w-8 md:w-12 h-8 md:h-12 cursor-pointer link-icon"
+      viewBox="0 0 32 32"
     >
       <path
-        stroke="#000"
+        stroke="#DB2777"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="4"
-        d="M8 8h32c2.2 0 4 1.8 4 4v24c0 2.2-1.8 4-4 4H8c-2.2 0-4-1.8-4-4V12c0-2.2 1.8-4 4-4z"
+        strokeWidth="1.5"
+        d="M5.334 5.333h21.333c1.467 0 2.667 1.2 2.667 2.667v16c0 1.467-1.2 2.667-2.667 2.667H5.334A2.674 2.674 0 012.667 24V8c0-1.467 1.2-2.667 2.667-2.667z"
       ></path>
       <path
-        stroke="#000"
+        stroke="#DB2777"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="4"
-        d="M44 12L24 26 4 12"
+        strokeWidth="1.5"
+        d="M29.334 8L16 17.333 2.667 8"
       ></path>
     </svg>
   );
@@ -127,18 +126,16 @@ export const TwitterIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
+      className="w-6 h-6 md:w-8 md:h-8 cursor-pointer link-icon"
       fill="none"
-      viewBox="0 0 48 48"
-      className="w-8 md:w-12 h-8 md:h-12 cursor-pointer link-icon"
+      viewBox="0 0 32 32"
     >
       <path
-        stroke="#000"
+        stroke="#DB2777"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="4"
-        d="M46 6a21.8 21.8 0 01-6.28 3.06 8.96 8.96 0 00-15.72 6v2A21.32 21.32 0 016 8s-8 18 10 26a23.28 23.28 0 01-14 4c18 10 40 0 40-23a8.996 8.996 0 00-.16-1.66A15.44 15.44 0 0046 6v0z"
+        strokeWidth="1.5"
+        d="M30.666 4c-1.276.9-2.69 1.59-4.186 2.04a5.973 5.973 0 00-10.48 4v1.333a14.214 14.214 0 01-12-6.04s-5.334 12 6.666 17.334a15.52 15.52 0 01-9.333 2.666C13.333 32 28 25.333 28 10a6.009 6.009 0 00-.107-1.107A10.293 10.293 0 0030.666 4v0z"
       ></path>
     </svg>
   );

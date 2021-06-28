@@ -8,10 +8,9 @@ module.exports = {
         custom: ["General Sans", "sans-serif"],
       },
       colors: {
-        violet: "#BDB7FF",
-        "moonglade-water": "#69ffef",
-        "tuscan-sun": "#ffd850",
-        "light-green": "#45F8AD",
+        "light-green": "#E7F8F4",
+        "light-pink": "#FFF2FB",
+        active: "#4ADA7B",
       },
       height: {
         14.5: "60px",
@@ -24,9 +23,11 @@ module.exports = {
       padding: {
         md: "18px",
         lg: "30px",
+        45: "184px",
       },
       borderRadius: {
         large: "48px",
+        "extra-large": "80px",
       },
       margin: {
         lg: "72px",
@@ -35,8 +36,13 @@ module.exports = {
         height: "height",
       },
       fontSize: {
+        md: ["16px", "32px"],
+        "1.3xl": ["20px", "24px"],
+        "1.5xl": ["20px", "32px"],
+        "2.5xl": ["24px", "48px"],
         "3.5xl": ["32px", "40px"],
         "4.5xl": ["40px", "56px"],
+        "5.5xl": ["56px", "64px"],
         "6.5xl": ["64px", "64px"],
         "8.5xl": ["120px", "120px"],
       },

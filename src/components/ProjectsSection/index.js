@@ -1,71 +1,60 @@
 import PropTypes from "prop-types";
 
-import BeatsImage from "assets/images/projects/Beats.png";
+import StripeImage from "assets/images/projects/stripe.png";
 import DesktopImage from "assets/images/projects/Desktop.png";
-import GroupImage from "assets/images/projects/Group.png";
-import ShellImage from "assets/images/projects/Shell.png";
 
 import Project from "./Project";
 
 const projects = [
   {
     id: "1",
-    primaryText: "Athlane Dashboard",
-    secondaryText: "Designed and defined a visual language for Athlane.",
-    backgroundColorClass: "bg-violet",
+    primaryText: "Stripe Clone",
+    secondaryText:
+      "Cloned the famous Stripe website as part of design exercise.",
+    wrapperColorClass: "bg-light-pink",
     projectLink: "#",
-    image: DesktopImage,
+    projectLink: "#",
+    tech: ["TailwindCSS", "NextJS", "React"],
+    image: StripeImage,
   },
   {
     id: "2",
-    primaryText: "StarsAligned",
+    primaryText: "Stripe Clone",
     secondaryText:
-      "Marketplace for independent artists to buy professional demo tracks.",
-    backgroundColorClass: "bg-moonglade-water",
+      "Cloned the famous Stripe website as part of design exercise.",
+    wrapperColorClass: "bg-light-green",
+
     projectLink: "#",
-    image: BeatsImage,
-  },
-  {
-    id: "3",
-    primaryText: "Sail Omnibox",
-    secondaryText:
-      "Easy to use command pallette for collaborative browser, Sail.",
-    backgroundColorClass: "bg-tuscan-sun",
-    projectLink: "#",
-    image: GroupImage,
-  },
-  {
-    id: "4",
-    primaryText: "Nucleus",
-    secondaryText: "Nucleus helps you superpower your resumes.",
-    backgroundColorClass: "bg-light-green",
-    projectLink: "#",
-    image: ShellImage,
+    tech: ["TailwindCSS", "NextJS", "React"],
+    image: DesktopImage,
   },
 ];
 
 const ProjectsSection = ({ addToRefs }) => {
   return (
-    <div className="container space-y-10" id="projects">
+    <div id="projects">
       {projects.map(
         ({
           id,
           primaryText,
           secondaryText,
-          backgroundColorClass,
+          wrapperColorClass,
           projectLink,
           image,
+          tech,
         }) => {
           return (
-            <Project
-              addToRefs={addToRefs}
-              key={id}
-              primaryText={primaryText}
-              secondaryText={secondaryText}
-              backgroundColorClass={backgroundColorClass}
-              projectLink={projectLink}
-              image={image}
-            />
+            <div key={id} className="py-10 sm:py-20  border-b border-gray-100">
+              <Project
+                addToRefs={addToRefs}
+                primaryText={primaryText}
+                secondaryText={secondaryText}
+                projectLink={projectLink}
+                wrapperColorClass={wrapperColorClass}
+                tech={tech}
+                image={image}
+              />
+            </div>
           );
         }
       )}

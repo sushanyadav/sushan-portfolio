@@ -7,6 +7,8 @@ import { animateProjectsOnScroll, projectsTimeline } from "animations/projects";
 
 import Main from "components/MainSection/Main";
 import ProjectsSection from "components/ProjectsSection";
+import AboutSection from "components/AboutSection";
+import SkillsetSection from "components/SkillsetSection";
 
 const HomePage = forwardRef((props, ref) => {
   const revealRef = useRef();
@@ -36,7 +38,7 @@ const HomePage = forwardRef((props, ref) => {
   ) => {
     const st = ScrollTrigger.create({
       trigger: el,
-      start: "top-=350 center",
+      start: "top-=450 center",
       scroller: scrollItem.current,
       animation: projectsTimeline(
         imageWrapper,
@@ -65,6 +67,8 @@ const HomePage = forwardRef((props, ref) => {
     <>
       <Main />
       <ProjectsSection addToRefs={addToRefs} />
+      <AboutSection />
+      <SkillsetSection />
     </>
   );
 });

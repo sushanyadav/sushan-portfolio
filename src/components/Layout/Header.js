@@ -76,8 +76,19 @@ const Header = ({ scrollYPosition }) => {
         </Link>
         <NavItems />
         <div className="flex flex-none space-x-2 md:space-x-8 items-center justify-center">
-          <MoonIcon />
-          <Button Icon={DownloadIcon} text="Resume" paddingClass="py-1" />
+          <button className="inline-block p-2">
+            <MoonIcon />
+          </button>
+          <Button
+            Icon={DownloadIcon}
+            text="Resume"
+            rounded="rounded-large"
+            textColor="text-white"
+            background="bg-black"
+            fontSize="text-base"
+            padding="md:py-2 md:px-5 py-1 px-3"
+            hover="hover:opacity-80"
+          />
         </div>
       </header>
     </section>

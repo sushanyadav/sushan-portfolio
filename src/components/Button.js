@@ -2,12 +2,21 @@ import PropTypes from "prop-types";
 
 import { GoToIcon } from "./Icons";
 
-const Button = ({ Icon, text, paddingClass }) => {
-  const paddingClassName = paddingClass || "py-3";
-
+const Button = ({
+  Icon,
+  text,
+  textColor,
+  rounded,
+  background,
+  fontSize,
+  outline,
+  padding,
+  hover,
+  additionalClass,
+}) => {
   return (
     <button
-      className={`${paddingClassName} group leading-5 flex items-center justify-center px-3 sm:py-3 sm:px-4 md:py-2 md:px-5 text-sm md:text-base rounded-large focus:outline-none focus:bg-gray-700 hover:bg-gray-800 transition-colors bg-black text-white sm:w-auto w-full`}
+      className={`${rounded} ${outline} ${padding} ${textColor} ${background} ${fontSize} ${hover} ${additionalClass} group flex font-medium items-center justify-center focus:outline-none transition-colors`}
     >
       {text}
       <span className="ml-2.5">
@@ -19,13 +28,27 @@ const Button = ({ Icon, text, paddingClass }) => {
 
 Button.defaultProps = {
   Icon: GoToIcon,
-  paddingClass: "",
+  textColor: "text-pink-600",
+  rounded: "rounded-extra-large",
+  background: "",
+  fontSize: "text-sm",
+  outline: "",
+  additionalClass: "",
+  padding: "py-2 px-4",
+  hover: "hover:text-white hover:bg-pink-600",
 };
 
 Button.propTypes = {
-  Icon: PropTypes.func.isRequired,
+  Icon: PropTypes.func,
   text: PropTypes.string.isRequired,
-  paddingClass: PropTypes.string,
+  textColor: PropTypes.string,
+  rounded: PropTypes.string,
+  background: PropTypes.string,
+  fontSize: PropTypes.string,
+  outline: PropTypes.string,
+  padding: PropTypes.string,
+  hover: PropTypes.string,
+  additionalClass: PropTypes.string,
 };
 
 export default Button;

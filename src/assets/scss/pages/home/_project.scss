@@ -6,16 +6,5 @@
 
 .image-wrapper {
   min-height: 214px;
-
-  @include min-break-point(tablet) {
-    min-height: 287px;
-  }
-
-  @include min-break-point(large-desktop) {
-    min-height: 384px;
-  }
-
-  @include min-break-point(extra-large-desktop) {
-    min-height: 484px;
-  }
+  max-width: 691px;
 }

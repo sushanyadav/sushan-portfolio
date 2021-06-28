@@ -26,9 +26,21 @@ const Main = () => {
         0.5
       )
       .from(
-        ".sushan-text",
+        ".dot-text",
         {
           yPercent: 100,
+          opacity: 0,
+          autoAlpha: 0,
+          ease: Power3.easeInOut,
+          duration: 0.8,
+        },
+        0.6
+      )
+      .from(
+        ".location-text",
+        {
+          yPercent: 100,
+          opacity: 0,
           autoAlpha: 0,
           ease: Power3.easeInOut,
           duration: 0.8,
@@ -48,10 +60,9 @@ const Main = () => {
       .from(
         ".secondary-text",
         {
-          yPercent: 100,
-          autoAlpha: 0,
+          opacity: 0,
           ease: Power3.easeInOut,
-          duration: 0.8,
+          duration: 1,
         },
         1
       );
@@ -60,42 +71,41 @@ const Main = () => {
   //
 
   return (
-    <>
-      {/* spacer for navbar */}
+    <div className="border-b border-gray-100">
+      {/* spacer for navbar  start*/}
       <div className="h-14.5 sm:h-22" />
-      <main className="mt-8 md:mt-lg md:mb-lg mb-10 container text-gray-900">
-        <h1 className="font-bold overflow-hidden text-4.5xl md:text-6.5xl">
-          <div className="overflow-hidden ">
-            <span className="hi-text inline-block">Hi!</span>
-          </div>
+      {/* spacer for navbar end*/}
+      <main className="py-16 md:py-45 container  text-gray-900">
+        <h1 className=" font-semibold overflow-hidden text-2xl md:text-5.5xl">
+          <span className="hi-text inline-block">Hi! </span>
 
-          <span className="i-am-text inline-block">I&apos;m </span>
-          <span
-            className="tracking-wider md:tracking-normal sushan-text inline-block text-black ml-3 md:ml-4"
-            style={{
-              WebkitTextStroke: "1px black",
-              WebkitTextFillColor: "white",
-            }}
-          >
-            Sushan.
+          <span className="i-am-text inline-block ml-3">I am Sushan</span>
+
+          <span className="text-pink-600 md:tracking-normal dot-text inline-block">
+            .
+          </span>
+
+          <span className="ml-5 text-xs md:text-base self-end location-text font-medium">
+            📍Nepal
           </span>
         </h1>
         <div className="overflow-hidden">
-          <h2
-            style={{ color: "#8240ED" }}
-            className="mt-3 front-end-text text-2xl md:3.5xl font-bold"
-          >
-            Frontend Developer based in Nepal 🇳🇵
+          <h2 className="mt-2 front-end-text text-base md:text-3.5xl font-normal">
+            I love building interactive web experiences using technologies such
+            as <span className="font-bold">React</span> &{" "}
+            <span className="font-bold">NextJS</span>.
           </h2>
         </div>
-        <div className=" overflow-hidden">
-          <p className="md:mt-8 mt-6 secondary-text text-xl leading-8 md:text-2xl">
-            Currently, looking for the next opportunity to create beautiful user
-            interfaces.
-          </p>
+        <div className="mt-6 inline-block">
+          <div className="bg-white flex items-center py-2 px-3 shadow-sm rounded-3xl secondary-text">
+            <div className="w-2 h-2 bg-active rounded-full mr-2"></div>
+            <p className=" font-medium text-sm md:text-base">
+              Currently available for new opportunities
+            </p>
+          </div>
         </div>
       </main>
-    </>
+    </div>
   );
 };
 

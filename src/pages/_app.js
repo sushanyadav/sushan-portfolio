@@ -15,7 +15,6 @@ import animateFooterOnScroll from "animations/footer";
 // import animateHeaderOnScroll from "animations/header";
 
 import { setLocoMotiveWithScrollTrigger } from "utils/animations";
-import { scrollToFooter } from "utils/navigationScroll";
 
 import "assets/scss/main.scss";
 
@@ -43,22 +42,16 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const { current: cursor } = cursorItem;
 
-    let mouseX = 0;
-    let mouseY = 0;
-
     gsap.to(cursor, 0, { opacity: 1 });
 
-    gsap.to({}, 0.016, {
-      repeat: -1,
-      onRepeat: function () {
-        gsap.set(cursor, {
-          css: {
-            left: mouseX,
-            top: mouseY,
-          },
-        });
-      },
-    });
+    function moveCircle(e) {
+      gsap.to(cursor, {
+        duration: 0.025,
+        x: e.clientX,
+        y: e.clientY,
+        ease: "sine.out",
+      });
+    }
 
     const onEnter = () => {
       const { current: cursor } = cursorItem;
@@ -76,10 +69,7 @@ function MyApp({ Component, pageProps }) {
 
     if (document) {
       // cursor
-      document.addEventListener("mousemove", function (e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
+      document.addEventListener("mousemove", moveCircle);
 
       // not showing cursor on touch devices
       if ("ontouchstart" in document.documentElement) {
@@ -119,6 +109,7 @@ function MyApp({ Component, pageProps }) {
         tablet: {
           smooth: false,
         },
+        reloadOnContextChange: true,
         firefoxMultiplier: 50,
       });
 
@@ -155,7 +146,6 @@ function MyApp({ Component, pageProps }) {
         footerRef,
         updateLoco,
         scrollItem.current,
-        scrollToFooter,
         scrollTo
       );
 
@@ -172,7 +162,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
-          href="https://api.fontshare.com/css?f[]=general-sans@400,500,700&display=swap"
+          href="https://api.fontshare.com/css?f[]=general-sans@400,500,600,700&display=swap"
           rel="stylesheet"
         />
       </Head>
@@ -180,7 +170,10 @@ function MyApp({ Component, pageProps }) {
         {/* smooth scroll component */}
         <Header scrollYPosition={scrollYPosition} />
         {/* cursor */}
-        <div className="cursor opacity-0" ref={cursorItem}>
+        <div
+          className="absolute z-50 select-none pointer-events-none opacity-0"
+          ref={cursorItem}
+        >
           <Cursor isTouchDevice={isTouchDevice} />
         </div>
         <div ref={scrollItem} className="opacity-0 font-custom">

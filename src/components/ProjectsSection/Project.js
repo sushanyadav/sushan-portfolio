@@ -7,43 +7,57 @@ import Button from "components/Button";
 const Project = ({
   primaryText,
   secondaryText,
-  backgroundColorClass,
+  wrapperColorClass,
   projectLink,
   image,
   addToRefs,
+  tech,
 }) => {
   return (
     <div
       ref={addToRefs}
-      className={`${backgroundColorClass} overflow-hidden opacity-0 p-5 pb-0 md:p-10 xl:p-14 md:pb-0 xl:pb-0  flex flex-col sm:flex-row gap-6 md:gap-10 xl:gap-20 rounded-3xl`}
+      className={`container overflow-hidden opacity-0 flex  items-start  justify-between w-full flex-col sm:flex-row gap-8 md:gap-16`}
     >
-      <div className="w-full xl:w-5/12">
+      <div>
         <div className="overflow-hidden">
-          <h3 className="text-gray-900 font-extrabold text-xl md:text-2xl lg:text-4xl xl:text-4.5xl">
+          <h3 className="text-gray-900 font-semibold text-1.5xl md:text-4.5xl">
             {primaryText}
           </h3>
         </div>
         <div className="overflow-hidden">
-          <p className="text-black text-opacity-62 text-base md:text-xl lg:text-3xl xl:text-3.5xl font-medium mt-1">
-            {secondaryText}
-          </p>
+          <p className="text-gray-600 text-base md:text-2xl">{secondaryText}</p>
         </div>
-        <div className="mt-6">
+
+        <div className="mt-5 text-sm font-medium flex gap-2">
+          {tech.map((techNames) => {
+            return (
+              <span
+                style={{ cursor: "none" }}
+                className="bg-gray-50 hover:bg-gray-100 px-3 py-2 rounded-extra-large inline-block"
+                key={techNames}
+              >
+                {techNames}
+              </span>
+            );
+          })}
+        </div>
+        <div className="mt-7">
           <Link href={projectLink}>
             <a className="inline-block sm:w-auto w-full">
-              <Button text="View Project" />
+              <Button text="View Project" outline="border border-pink-600" />
             </a>
           </Link>
         </div>
       </div>
-      <div className="overflow-hidden image-wrapper rounded-t-lg w-full xl:w-8/12 relative top-2">
-        <div className={`${backgroundColorClass} absolute inset-0 z-10`}></div>
+      <div
+        className={`${wrapperColorClass} overflow-hidden p-4 md:p-8 relative image-wrapper w-full`}
+      >
+        <div className={`${wrapperColorClass} absolute inset-0 z-10`}></div>
+
         <Image
           src={image}
           alt={primaryText}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="top center"
+          layout="responsive"
           quality={100}
         />
       </div>
@@ -58,9 +72,10 @@ Project.defaultProps = {
 Project.propTypes = {
   primaryText: PropTypes.string.isRequired,
   secondaryText: PropTypes.string.isRequired,
-  backgroundColorClass: PropTypes.string.isRequired,
   projectLink: PropTypes.string.isRequired,
+  wrapperColorClass: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
+  tech: PropTypes.arrayOf(PropTypes.string).isRequired,
   addToRefs: PropTypes.func,
 };
 

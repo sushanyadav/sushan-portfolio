@@ -10,7 +10,7 @@ const animateAboutMeOnScroll = (aboutRef, mainItem) => {
   const TwitterIcon = aboutRef.current.lastChild.lastChild.lastChild;
 
   const tl = gsap
-    .timeline({})
+    .timeline()
     .from(headingText, {
       yPercent: 100,
       ease: Power3.easeInOut,

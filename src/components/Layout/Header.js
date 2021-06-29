@@ -123,7 +123,7 @@ const Header = ({ scrollYPosition, darkMode, setDarkMode }) => {
     } else {
       setActiveLink("");
     }
-  }, [scrollYPosition]);
+  }, [scrollYPosition, distanceFromTop]);
 
   const handleDarkMode = () => {
     setDarkMode(!darkMode);

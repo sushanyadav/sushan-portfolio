@@ -66,7 +66,7 @@ export const projectsTimeline = (
   index
 ) => {
   const tl = gsap
-    .timeline({})
+    .timeline()
     .to(el, {
       opacity: 1,
       ease: Power3.easeInOut,

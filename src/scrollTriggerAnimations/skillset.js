@@ -17,7 +17,7 @@ const animateSkillSetOnScroll = (skillsetRef, mainItem) => {
   const learningList = skillsetRef.current.lastChild.children[3].lastChild;
 
   const tl = gsap
-    .timeline({})
+    .timeline()
     .from(headingText, {
       yPercent: 100,
       ease: Power3.easeInOut,

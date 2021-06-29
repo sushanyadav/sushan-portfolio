@@ -2,19 +2,19 @@ import { useEffect } from "react";
 import { gsap, Power3 } from "gsap";
 
 const Main = () => {
-  const tl = new gsap.core.Timeline();
-
   useEffect(() => {
-    tl.from(
-      ".hi-text",
-      {
-        yPercent: 100,
-        autoAlpha: 0,
-        ease: Power3.easeInOut,
-        duration: 0.8,
-      },
-      0.3
-    )
+    gsap
+      .timeline()
+      .from(
+        ".hi-text",
+        {
+          yPercent: 100,
+          autoAlpha: 0,
+          ease: Power3.easeInOut,
+          duration: 0.8,
+        },
+        0.3
+      )
       .from(
         ".i-am-text",
         {
@@ -76,8 +76,6 @@ const Main = () => {
         0.3
       );
   }, []);
-
-  //
 
   return (
     <div className="main-section border-b transition-colors border-gray-100 dark:border-gray-800">

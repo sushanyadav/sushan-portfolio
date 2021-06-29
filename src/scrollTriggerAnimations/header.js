@@ -6,7 +6,7 @@ const animateHeaderOnScroll = (updateLoco, mainItem, isSmallDevice) => {
   const button = nav.querySelector("button");
 
   const tl = gsap
-    .timeline({})
+    .timeline()
     .fromTo(
       nav,
       {

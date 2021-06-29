@@ -21,16 +21,13 @@ const skillsets = [
 
 const SkillsetSection = ({ skillsetRef }) => {
   return (
-    <section
-      ref={skillsetRef}
-      className="py-10 lg:py-16 xl:py-20 border border-b md:border-none border-gray-100 text-gray-600 container"
-    >
+    <section ref={skillsetRef} className="py-10 lg:py-16 xl:py-20 container">
       <div className="overflow-hidden mb-8">
-        <h1 className="text-gray-900 text-1.3xl lg:text-3xl xl:text-4.5xl font-semibold">
+        <h1 className="text-gray-900 dark:text-gray-100  text-1.3xl lg:text-3xl xl:text-4.5xl font-semibold">
           Skillset
         </h1>
       </div>
-      <div className="text-gray-800 space-y-8">
+      <div className="text-gray-800 dark:text-gray-500 space-y-8">
         {skillsets.map((skillset) => {
           return (
             <div
@@ -40,7 +37,7 @@ const SkillsetSection = ({ skillsetRef }) => {
               <div className="overflow-hidden">
                 <h2 className="font-medium  mb-2">{skillset.name}</h2>
               </div>
-              <h3 className="text-pink-600 ">
+              <h3 className="text-pink-600 dark:text-pink-500">
                 {skillset.skills.map((skill, i) => {
                   return (
                     <span key={skill}>

@@ -9,7 +9,6 @@ export const DownloadIcon = () => {
       viewBox="0 0 16 16"
     >
       <path
-        stroke="#fff"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
@@ -23,17 +22,32 @@ export const MoonIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      className="w-4 md:w-5 h-4 md:h-5 text-gray-600 stroke-current"
       fill="none"
       viewBox="0 0 20 20"
     >
       <path
-        stroke="#52525B"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
         d="M17.5 10.658A7.5 7.5 0 119.342 2.5a5.833 5.833 0 008.158 8.158v0z"
+      ></path>
+    </svg>
+  );
+};
+export const SunIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-4 md:w-5 h-4 text-gray-500 stroke-current md:h-5"
+      fill="none"
+      viewBox="0 0 20 20"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        d="M10 17.5v1.667M15.3 15.3l1.184 1.183M3.518 16.483L4.7 15.3M17.5 10h1.667M.834 10h1.667M10 14.167a4.167 4.167 0 100-8.334 4.167 4.167 0 000 8.334zM15.3 4.7l1.184-1.183M3.518 3.517L4.7 4.7M10 .833V2.5"
       ></path>
     </svg>
   );
@@ -100,19 +114,17 @@ export const MailIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6 md:w-8 md:h-8 cursor-pointer link-icon"
+      className="w-6 h-6 md:w-8 md:h-8 text-pink-600 dark:text-pink-500 stroke-current cursor-pointer link-icon"
       fill="none"
       viewBox="0 0 32 32"
     >
       <path
-        stroke="#DB2777"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
         d="M5.334 5.333h21.333c1.467 0 2.667 1.2 2.667 2.667v16c0 1.467-1.2 2.667-2.667 2.667H5.334A2.674 2.674 0 012.667 24V8c0-1.467 1.2-2.667 2.667-2.667z"
       ></path>
       <path
-        stroke="#DB2777"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
@@ -126,12 +138,11 @@ export const TwitterIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6 md:w-8 md:h-8 cursor-pointer link-icon"
+      className="w-6 h-6 text-pink-600 dark:text-pink-500 stroke-current md:w-8 md:h-8 cursor-pointer link-icon"
       fill="none"
       viewBox="0 0 32 32"
     >
       <path
-        stroke="#DB2777"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"

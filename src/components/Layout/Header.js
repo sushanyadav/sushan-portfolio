@@ -4,7 +4,7 @@ import { gsap, Power3 } from "gsap";
 import PropTypes from "prop-types";
 
 import Button from "components/Button";
-import { DownloadIcon, MoonIcon } from "components/Icons";
+import { DownloadIcon, MoonIcon, SunIcon } from "components/Icons";
 
 const NavItems = ({ activeLink }) => {
   return (
@@ -15,7 +15,9 @@ const NavItems = ({ activeLink }) => {
           <Link href="#projects">
             <a
               className={`${
-                activeLink === "Projects" ? "text-pink-600" : "text-gray-900"
+                activeLink === "Projects"
+                  ? "text-pink-600 dark:text-pink-500"
+                  : "text-gray-900 dark:text-gray-500"
               } py-8 pr-2 pl-4 sm:pr-6 sm:pl-12 md:pr-8 md:pl-16`}
             >
               Projects
@@ -26,7 +28,9 @@ const NavItems = ({ activeLink }) => {
           <Link href="#about">
             <a
               className={`${
-                activeLink === "About" ? "text-pink-600" : "text-gray-900"
+                activeLink === "About"
+                  ? "text-pink-600 dark:text-pink-500"
+                  : "text-gray-900 dark:text-gray-500"
               } py-8 px-4 sm:px-12 md:px-16`}
             >
               About
@@ -37,7 +41,9 @@ const NavItems = ({ activeLink }) => {
           <Link href="#contact">
             <a
               className={`${
-                activeLink === "Contact" ? "text-pink-600" : "text-gray-900"
+                activeLink === "Contact"
+                  ? "text-pink-600 dark:text-pink-500"
+                  : "text-gray-900 dark:text-gray-500"
               } py-8 pl-2 pr-4 sm:pl-6 sm:pr-12 md:pl-8 md:pr-16`}
             >
               Contact
@@ -55,7 +61,7 @@ NavItems.propTypes = {
   activeLink: PropTypes.string.isRequired,
 };
 
-const Header = ({ scrollYPosition }) => {
+const Header = ({ scrollYPosition, darkMode, setDarkMode }) => {
   const header = useRef();
 
   const [distanceFromTop, setDistanceFromTop] = useState({
@@ -100,7 +106,7 @@ const Header = ({ scrollYPosition }) => {
       distanceFromTop;
 
     const projectPosition =
-      scrollYPosition >= projectsDistance &&
+      scrollYPosition >= projectsDistance - 10 &&
       scrollYPosition < aboutDistance - 200;
     const aboutPosition =
       scrollYPosition >= aboutDistance &&
@@ -119,10 +125,19 @@ const Header = ({ scrollYPosition }) => {
     }
   }, [scrollYPosition]);
 
+  const handleDarkMode = () => {
+    setDarkMode(!darkMode);
+    if (darkMode) {
+      localStorage.removeItem("theme");
+    } else {
+      localStorage.theme = "dark";
+    }
+  };
+
   return (
     <section
       ref={header}
-      className="opacity-0 border-b bg-white border-gray-100 z-10 h-14.5 sm:h-22 fixed top-0 left-0 w-full navigation overflow-y-hidden"
+      className="opacity-0 border-b transition-colors bg-white dark:bg-black border-gray-100 dark:border-gray-800 z-10 h-14.5 sm:h-22 fixed top-0 left-0 w-full navigation overflow-y-hidden"
     >
       <header className="container h-full flex justify-between items-center">
         <Link href="/">
@@ -137,15 +152,18 @@ const Header = ({ scrollYPosition }) => {
         </Link>
         <NavItems activeLink={activeLink} />
         <div className="flex flex-none space-x-2 md:space-x-8 items-center justify-center">
-          <button className="focus:outline-none inline-block p-2">
-            <MoonIcon />
+          <button
+            onClick={handleDarkMode}
+            className="focus:outline-none inline-block p-2"
+          >
+            {darkMode ? <SunIcon /> : <MoonIcon />}
           </button>
           <Button
             Icon={DownloadIcon}
             text="Resume"
             rounded="rounded-large"
-            textColor="text-white"
-            background="bg-black"
+            textColor="text-white dark:text-gray-400"
+            background="bg-black dark:bg-gray-800"
             fontSize="md:text-base text-xs"
             padding="sm:py-2 sm:px-5 py-1 px-3"
             hover="hover:opacity-80"
@@ -160,6 +178,8 @@ Header.defaultProps = {};
 
 Header.propTypes = {
   scrollYPosition: PropTypes.number.isRequired,
+  setDarkMode: PropTypes.func.isRequired,
+  darkMode: PropTypes.bool.isRequired,
 };
 
 export default Header;

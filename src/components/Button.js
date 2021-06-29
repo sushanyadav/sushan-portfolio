@@ -28,14 +28,14 @@ const Button = ({
 
 Button.defaultProps = {
   Icon: GoToIcon,
-  textColor: "text-pink-600",
+  textColor: "text-pink-600 dark:text-pink-500",
   rounded: "rounded-extra-large",
   background: "",
   fontSize: "text-sm",
   outline: "",
   additionalClass: "",
   padding: "py-2 px-4",
-  hover: "hover:text-white hover:bg-pink-600",
+  hover: "hover:text-white hover:bg-pink-600 dark:hover:bg-pink-500",
 };
 
 Button.propTypes = {

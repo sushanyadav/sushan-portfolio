@@ -7,10 +7,10 @@ const AboutSection = ({ aboutRef }) => {
     <section
       ref={aboutRef}
       id="about"
-      className="py-10 lg:py-16 xl:py-20 text-md lg:text-xl xl:text-2.5xl border border-b md:border-none border-gray-100 text-gray-600  container"
+      className="py-10 lg:py-16 xl:py-20 text-md lg:text-xl xl:text-2.5xl border border-b md:border-none border-gray-100 dark:border-gray-800 transition-colors text-gray-600 dark:text-gray-500 container"
     >
       <div className="overflow-hidden">
-        <h1 className="text-gray-900 text-1.3xl lg:text-3xl xl:text-4.5xl font-semibold ">
+        <h1 className="text-gray-900 dark:text-gray-100 text-1.3xl lg:text-3xl xl:text-4.5xl font-semibold ">
           A little about me
         </h1>
       </div>

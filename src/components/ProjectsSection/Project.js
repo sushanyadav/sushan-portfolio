@@ -19,22 +19,22 @@ const Project = ({
     >
       <div className="w-full lg:w-8/12 xl:w-auto">
         <div className="overflow-hidden">
-          <h3 className="text-gray-900 font-semibold text-1.5xl lg:text-3xl xl:text-4.5xl">
+          <h3 className="text-gray-900 dark:text-gray-100 font-semibold text-1.5xl lg:text-3xl xl:text-4.5xl">
             {primaryText}
           </h3>
         </div>
         <div className="overflow-hidden">
-          <p className="text-gray-600 text-base mt-0 lg:mt-2 xl:mt-0 lg:text-xl xl:text-2xl">
+          <p className="text-gray-600 dark:text-gray-500 text-base mt-0 lg:mt-2 xl:mt-0 lg:text-xl xl:text-2xl">
             {secondaryText}
           </p>
         </div>
 
-        <div className="mt-5 sm:mt-3 lg:mt-4 xl:mt-5 text-sm font-medium flex gap-2">
+        <div className="mt-5 sm:mt-3 dark:text-gray-400 lg:mt-4 xl:mt-5 text-sm font-medium flex gap-2">
           {tech.map((techNames) => {
             return (
               <span
                 style={{ cursor: "none" }}
-                className="bg-gray-50 hover:bg-gray-100 px-3 py-2 rounded-extra-large inline-block"
+                className="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 px-3 py-2 rounded-extra-large inline-block"
                 key={techNames}
               >
                 {techNames}
@@ -50,7 +50,10 @@ const Project = ({
             className="inline-block sm:w-auto w-full"
             rel="noreferrer"
           >
-            <Button text="View Project" outline="border border-pink-600" />
+            <Button
+              text="View Project"
+              outline="border border-pink-600 dark:border-pink-500"
+            />
           </a>
           {/* </Link> */}
         </div>

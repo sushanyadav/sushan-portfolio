@@ -43,7 +43,10 @@ const ProjectsSection = ({ addToRefs }) => {
           tech,
         }) => {
           return (
-            <div key={id} className="py-10 sm:py-20  border-b border-gray-100">
+            <div
+              key={id}
+              className="py-10 sm:py-20 transition-colors border-b border-gray-100 dark:border-gray-800"
+            >
               <Project
                 addToRefs={addToRefs}
                 primaryText={primaryText}

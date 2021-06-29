@@ -13,7 +13,7 @@ import Header from "components/Layout/Header";
 
 // import useMediaQuery from "hooks/useMediaQuery";
 
-import animateFooterOnScroll from "animations/footer";
+import animateFooterOnScroll from "scrollTriggerAnimations/footer";
 // import animateHeaderOnScroll from "animations/header";
 
 import { setLocoMotiveWithScrollTrigger } from "utils/setLocoMotiveWithScrollTrigger";
@@ -26,6 +26,20 @@ function MyApp({ Component, pageProps }) {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [showScrollToTopButton, setShowScrollToTopButton] = useState(false);
   const [scrollYPosition, setScrollYPosition] = useState(0);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (
+      localStorage.theme === "dark"
+      // ||!("theme" in localStorage)
+      // &&
+      //   window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      setDarkMode(true);
+    } else {
+      setDarkMode(false);
+    }
+  }, []);
 
   const componentRef = useRef();
   const scrollItem = useRef();
@@ -175,9 +189,16 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <div style={{ cursor: !isTouchDevice ? "none" : "auto" }}>
+      <div
+        className={`${darkMode ? "dark" : ""}`}
+        style={{ cursor: !isTouchDevice ? "none" : "auto" }}
+      >
         {/* smooth scroll component */}
-        <Header scrollYPosition={scrollYPosition} />
+        <Header
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          scrollYPosition={scrollYPosition}
+        />
         {/* cursor */}
         <div
           className="absolute z-50 select-none pointer-events-none opacity-0"
@@ -185,7 +206,10 @@ function MyApp({ Component, pageProps }) {
         >
           <Cursor isTouchDevice={isTouchDevice} />
         </div>
-        <div ref={scrollItem} className="opacity-0 font-custom">
+        <div
+          ref={scrollItem}
+          className="bg-white dark:bg-black transition-colors opacity-0 font-custom"
+        >
           <Layout scrollYPosition={scrollYPosition} footerRef={footerRef}>
             <Component
               scrollItem={scrollItem}

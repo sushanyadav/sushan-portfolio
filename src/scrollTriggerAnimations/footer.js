@@ -10,7 +10,7 @@ const animateFooterOnScroll = (footerRef, mainItem) => {
 
   ScrollTrigger.create({
     trigger: footerRef.current,
-    start: "top-=400 center",
+    start: "top-=450 center",
     scroller: mainItem,
     animation: tl,
     toggleActions: "play none none none",

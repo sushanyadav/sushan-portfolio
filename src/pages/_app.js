@@ -190,7 +190,9 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <div
-        className={`${darkMode ? "dark" : ""}`}
+        className={`${
+          darkMode ? "dark" : ""
+        } selection:bg-pink-500 selection:text-white`}
         style={{ cursor: !isTouchDevice ? "none" : "auto" }}
       >
         {/* smooth scroll component */}

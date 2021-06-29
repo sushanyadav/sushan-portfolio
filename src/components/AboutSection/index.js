@@ -38,7 +38,7 @@ const AboutSection = ({ aboutRef }) => {
       </div>
 
       <div id="contact" className="mt-8">
-        <p className="font-semibold inline-block mb-8">
+        <p className="font-medium inline-block mb-8">
           So, if you like my work and feel like you have a role that could fit,
           feel free to reach out.
         </p>

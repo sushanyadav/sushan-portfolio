@@ -96,21 +96,28 @@ const Main = () => {
             .
           </span>
 
-          <span className="ml-3 md:ml-5 dark:text-gray-500 text-xs md:text-base self-end location-text font-medium">
+          <address className="inline-block not-italic ml-3 md:ml-5 dark:text-gray-500 text-xs md:text-base self-end location-text font-medium">
             📍Nepal
-          </span>
+          </address>
         </h1>
         <div className="overflow-hidden">
-          <h2 className="mt-2 front-end-text text-base md:text-xl lg:text-2xl xl:text-3.5xl dark:text-gray-500 font-normal">
+          <h2 className="mt-2 front-end-text text-base md:text-xl lg:text-2xl xl:text-3.5xl dark:text-gray-500 text-gray-600 font-normal">
             I love building interactive web experiences using technologies such
-            as <span className="font-bold dark:text-gray-200">React</span> &{" "}
-            <span className="font-bold dark:text-gray-200">NextJS</span>.
+            as{" "}
+            <span className="font-semibold text-gray-900 dark:text-gray-200">
+              React
+            </span>{" "}
+            &{" "}
+            <span className="font-semibold text-gray-900 dark:text-gray-200">
+              NextJS
+            </span>
+            .
           </h2>
         </div>
         <div className="mt-6 md:mt-2 lg:mt-4 xl:mt-6 inline-block">
-          <div className="bg-white transition-colors dark:bg-gray-800 flex items-center py-2 px-3 shadow-sm rounded-3xl secondary-text">
+          <div className="bg-white border border-gray-100 dark:border-gray-700 transition-colors dark:bg-gray-800 flex items-center py-2 px-3 shadow-sm rounded-3xl secondary-text">
             <div className="w-2 h-2 bg-active rounded-full mr-2"></div>
-            <p className="dark:text-gray-400 font-medium text-sm md:text-base">
+            <p className="dark:text-gray-400  font-medium text-sm md:text-base">
               Currently available for new opportunities
             </p>
           </div>

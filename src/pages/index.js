@@ -9,6 +9,7 @@ import Main from "components/MainSection/Main";
 import ProjectsSection from "components/ProjectsSection";
 import AboutSection from "components/AboutSection";
 import SkillsetSection from "components/SkillsetSection";
+import SiteMetaData from "components/SEO/SiteMetaData";
 
 const HomePage = forwardRef((props, ref) => {
   const projectsRef = useRef();
@@ -35,6 +36,7 @@ const HomePage = forwardRef((props, ref) => {
 
   return (
     <>
+      <SiteMetaData />
       <Main />
       <ProjectsSection addToRefs={addToRefs} />
       <AboutSection aboutRef={aboutRef} />

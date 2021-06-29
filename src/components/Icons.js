@@ -22,7 +22,7 @@ export const MoonIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-4 md:w-5 h-4 md:h-5 text-gray-600 stroke-current"
+      className="w-4 md:w-5 h-4 md:h-5 text-gray-600 stroke-current hover:text-pink-600 transition-colors duration-300 dark:hover:text-pink-500"
       fill="none"
       viewBox="0 0 20 20"
     >
@@ -39,7 +39,7 @@ export const SunIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-4 md:w-5 h-4 text-gray-500 stroke-current md:h-5"
+      className="w-4 md:w-5 h-4 text-gray-500 stroke-current md:h-5 hover:text-pink-600 transition-colors duration-300 dark:hover:text-pink-500"
       fill="none"
       viewBox="0 0 20 20"
     >

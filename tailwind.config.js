@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   mode: "jit",
@@ -10,6 +12,7 @@ module.exports = {
       colors: {
         "light-green": "#E7F8F4",
         "light-pink": "#FFF2FB",
+        gray: colors.gray,
         active: "#4ADA7B",
       },
       height: {

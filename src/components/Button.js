@@ -16,7 +16,7 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`${rounded} ${outline} ${padding} ${textColor} ${background} ${fontSize} ${hover} ${additionalClass} group flex font-medium items-center justify-center focus:outline-none transition-colors`}
+      className={`${rounded} ${outline} ${padding} ${textColor} ${background} ${fontSize} ${hover} ${additionalClass} group flex font-medium items-center justify-center focus:outline-none duration-300 transition-colors`}
     >
       {text}
       <span className="ml-2.5">
@@ -35,7 +35,8 @@ Button.defaultProps = {
   outline: "",
   additionalClass: "",
   padding: "py-2 px-4",
-  hover: "hover:text-white hover:bg-pink-600 dark:hover:bg-pink-500",
+  hover:
+    "hover:text-white dark:hover:text-white hover:bg-pink-600 dark:hover:bg-pink-500",
 };
 
 Button.propTypes = {

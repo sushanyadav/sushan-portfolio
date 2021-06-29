@@ -18,7 +18,7 @@ const NavItems = ({ activeLink }) => {
                 activeLink === "Projects"
                   ? "text-pink-600 dark:text-pink-500"
                   : "text-gray-900 dark:text-gray-500"
-              } py-8 pr-2 pl-4 sm:pr-6 sm:pl-12 md:pr-8 md:pl-16`}
+              } py-8 pr-2 pl-4 sm:pr-6 sm:pl-12 md:pr-8 md:pl-16 hover:text-pink-600 transition-colors duration-300 dark:hover:text-pink-500`}
             >
               Projects
             </a>
@@ -31,7 +31,7 @@ const NavItems = ({ activeLink }) => {
                 activeLink === "About"
                   ? "text-pink-600 dark:text-pink-500"
                   : "text-gray-900 dark:text-gray-500"
-              } py-8 px-4 sm:px-12 md:px-16`}
+              } py-8 px-4 sm:px-12 md:px-16 hover:text-pink-600 transition-colors duration-300 dark:hover:text-pink-500`}
             >
               About
             </a>
@@ -44,7 +44,7 @@ const NavItems = ({ activeLink }) => {
                 activeLink === "Contact"
                   ? "text-pink-600 dark:text-pink-500"
                   : "text-gray-900 dark:text-gray-500"
-              } py-8 pl-2 pr-4 sm:pl-6 sm:pr-12 md:pl-8 md:pr-16`}
+              } py-8 pl-2 pr-4 sm:pl-6 sm:pr-12 md:pl-8 md:pr-16 hover:text-pink-600 transition-colors duration-300 dark:hover:text-pink-500`}
             >
               Contact
             </a>
@@ -166,7 +166,7 @@ const Header = ({ scrollYPosition, darkMode, setDarkMode }) => {
             background="bg-black dark:bg-gray-800"
             fontSize="md:text-base text-xs"
             padding="sm:py-2 sm:px-5 py-1 px-3"
-            hover="hover:opacity-80"
+            hover="hover:bg-pink-600 dark:hover:bg-pink-500 dark:hover:text-white"
           />
         </div>
       </header>

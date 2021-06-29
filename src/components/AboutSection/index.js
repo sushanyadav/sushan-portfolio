@@ -43,12 +43,16 @@ const AboutSection = ({ aboutRef }) => {
           feel free to reach out.
         </p>
         <div className="flex gap-10">
-          <div>
-            <MailIcon />
-          </div>
-          <div>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://twitter.com/sushanyadav99"
+          >
             <TwitterIcon />
-          </div>
+          </a>
+          <a href="mailto:sushanyadav98@gmail.com">
+            <MailIcon />
+          </a>
         </div>
       </div>
     </section>

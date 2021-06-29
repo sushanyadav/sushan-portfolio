@@ -52,7 +52,7 @@ const Project = ({
           >
             <Button
               text="View Project"
-              outline="border border-pink-600 dark:border-pink-500"
+              outline="border-1.5 border-pink-600 dark:border-pink-500"
             />
           </a>
           {/* </Link> */}

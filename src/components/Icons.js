@@ -1,5 +1,23 @@
 import PropTypes from "prop-types";
 
+export const ArrowUpIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4 stroke-current"
+      fill="none"
+      viewBox="0 0 16 16"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        d="M8 12.667V3.333M3.333 8L8 3.333 12.666 8"
+      ></path>
+    </svg>
+  );
+};
+
 export const DownloadIcon = () => {
   return (
     <svg

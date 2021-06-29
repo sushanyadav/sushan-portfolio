@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
+import { ArrowUpIcon } from "./Icons";
+
 const ScrollToTopButton = ({ showScrollToTopButton }) => {
   const [isLoaded, seIsLoaded] = useState(false);
 
@@ -16,16 +18,20 @@ const ScrollToTopButton = ({ showScrollToTopButton }) => {
 
   return (
     <div
+      style={{ left: "50%", transform: "translateX(-50%)" }}
       className={`${
         isLoaded && showScrollToTopButton
-          ? "opacity-1"
+          ? "opacity-100"
           : "opacity-0 pointer-events-none"
-      }  fixed z-50 bottom-14 xl:bottom-8 right-4 xl:right-32 duration-500 transition-opacity`}
+      }  fixed container z-40 bottom-10 flex items-center justify-end duration-500 transition-opacity`}
     >
       <button
         id="scrollToTop"
-        className="bg-gray-100 dark:bg-gray-700 focus:outline-none opacity-70 shadow-md hover:bg-gray-200 focus:bg-gray-200 transition rounded-full  cursor-pointer h-8 w-8 flex items-center justify-center"
-      ></button>
+        className=" focus:outline-none p-3 transition border border-gray-100 dark:border-gray-700 text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-800 shadow-sm rounded-lg cursor-pointer flex items-center justify-center"
+      >
+        <ArrowUpIcon />{" "}
+        <span className="hidden md:block ml-2">Scroll to top</span>
+      </button>
     </div>
   );
 };

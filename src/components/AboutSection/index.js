@@ -7,7 +7,7 @@ const AboutSection = ({ aboutRef }) => {
     <section
       ref={aboutRef}
       id="about"
-      className="py-10 lg:py-16 xl:py-20 text-md lg:text-xl xl:text-2.5xl border border-b md:border-none border-gray-100 dark:border-gray-800 transition-colors text-gray-600 dark:text-gray-500 container"
+      className="py-10 lg:py-16 xl:py-20 text-md lg:text-xl xl:text-2.5xl border border-b md:border-none border-gray-100 dark:border-gray-800 text-gray-700 transition-colors dark:text-gray-500 container"
     >
       <div className="overflow-hidden">
         <h1 className="text-gray-900 dark:text-gray-100 text-1.3xl lg:text-3xl xl:text-4.5xl font-semibold ">
@@ -38,7 +38,7 @@ const AboutSection = ({ aboutRef }) => {
       </div>
 
       <div id="contact" className="mt-8">
-        <p className="font-medium inline-block mb-8">
+        <p className="dark:text-gray-400 text-gray-800 font-medium inline-block mb-8">
           So, if you like my work and feel like you have a role that could fit,
           feel free to reach out.
         </p>

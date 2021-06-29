@@ -15,6 +15,9 @@ module.exports = {
         gray: colors.gray,
         active: "#4ADA7B",
       },
+      borderWidth: {
+        1.5: "1.5px",
+      },
       height: {
         14.5: "60px",
         22: "88px",

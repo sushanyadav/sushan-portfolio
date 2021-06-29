@@ -4,10 +4,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 const animateHeaderOnScroll = (updateLoco, mainItem, isSmallDevice) => {
   const nav = document.querySelector(".navigation");
   const button = nav.querySelector("button");
-  const navItems = nav.querySelectorAll("ul li");
-
-  console.log(button);
-  console.log(navItems);
 
   const tl = gsap
     .timeline({})

@@ -1,28 +1,47 @@
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap, Power3 } from "gsap";
 import PropTypes from "prop-types";
 
 import Button from "components/Button";
 import { DownloadIcon, MoonIcon } from "components/Icons";
 
-const NavItems = () => {
+const NavItems = ({ activeLink }) => {
   return (
     <nav className="flex-grow">
-      <ul className="flex items-center justify-center space-x-4 sm:space-x-12 md:space-x-16 h-full font-medium text-gray-900 text-xs md:text-base leading-8">
+      <ul className="flex items-center justify-center h-full font-medium  text-xs md:text-base leading-8">
+        {/* 1rem sm:3rem md:4rem */}
         <li>
           <Link href="#projects">
-            <a className="py-8">Projects</a>
+            <a
+              className={`${
+                activeLink === "Projects" ? "text-pink-600" : "text-gray-900"
+              } py-8 pr-2 pl-4 sm:pr-6 sm:pl-12 md:pr-8 md:pl-16`}
+            >
+              Projects
+            </a>
           </Link>
         </li>
         <li>
           <Link href="#about">
-            <a className="py-8">About</a>
+            <a
+              className={`${
+                activeLink === "About" ? "text-pink-600" : "text-gray-900"
+              } py-8 px-4 sm:px-12 md:px-16`}
+            >
+              About
+            </a>
           </Link>
         </li>
         <li>
           <Link href="#contact">
-            <a className="py-8">Contact</a>
+            <a
+              className={`${
+                activeLink === "Contact" ? "text-pink-600" : "text-gray-900"
+              } py-8 pl-2 pr-4 sm:pl-6 sm:pr-12 md:pl-8 md:pr-16`}
+            >
+              Contact
+            </a>
           </Link>
         </li>
       </ul>
@@ -30,8 +49,22 @@ const NavItems = () => {
   );
 };
 
+NavItems.defaultProps = {};
+
+NavItems.propTypes = {
+  activeLink: PropTypes.string.isRequired,
+};
+
 const Header = ({ scrollYPosition }) => {
   const header = useRef();
+
+  const [distanceFromTop, setDistanceFromTop] = useState({
+    projectsDistance: null,
+    contactDistance: null,
+    aboutDistance: null,
+  });
+
+  const [activeLink, setActiveLink] = useState("");
 
   useEffect(() => {
     // removes initial flash
@@ -44,20 +77,48 @@ const Header = ({ scrollYPosition }) => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   if (document) {
-  //     const projectEl = document.getElementById("projects");
-  //     const projectDistance = projectEl.getBoundingClientRect().top - 40;
+  useEffect(() => {
+    if (document) {
+      // projects
+      const projectsEl = document.getElementById("projects");
+      const projectsDistance = projectsEl.getBoundingClientRect().top - 40;
 
-  // console.log(projectDistance, "project distance");
-  //   }
-  // }, []);
+      // about
+      const aboutEl = document.getElementById("about");
+      const aboutDistance = aboutEl.getBoundingClientRect().top - 100;
 
-  // useEffect(() => {
-  // console.log(scrollYPosition, "scrollYPosition");
-  // }, [scrollYPosition]);
+      // contact
+      const contactEl = document.getElementById("contact");
+      const contactDistance = contactEl.getBoundingClientRect().top - 80;
 
-  // 60px 96px
+      setDistanceFromTop({ projectsDistance, aboutDistance, contactDistance });
+    }
+  }, []);
+
+  useEffect(() => {
+    const { projectsDistance, aboutDistance, contactDistance } =
+      distanceFromTop;
+
+    const projectPosition =
+      scrollYPosition >= projectsDistance &&
+      scrollYPosition < aboutDistance - 200;
+    const aboutPosition =
+      scrollYPosition >= aboutDistance &&
+      scrollYPosition < contactDistance - 200;
+    const contactPosition =
+      contactDistance && scrollYPosition >= contactDistance - 100;
+
+    if (projectPosition) {
+      setActiveLink("Projects");
+    } else if (aboutPosition) {
+      setActiveLink("About");
+    } else if (contactPosition) {
+      setActiveLink("Contact");
+    } else {
+      setActiveLink("");
+    }
+  }, [scrollYPosition]);
+
   return (
     <section
       ref={header}
@@ -74,9 +135,9 @@ const Header = ({ scrollYPosition }) => {
             ></div>
           </a>
         </Link>
-        <NavItems />
+        <NavItems activeLink={activeLink} />
         <div className="flex flex-none space-x-2 md:space-x-8 items-center justify-center">
-          <button className="inline-block p-2">
+          <button className="focus:outline-none inline-block p-2">
             <MoonIcon />
           </button>
           <Button
@@ -85,8 +146,8 @@ const Header = ({ scrollYPosition }) => {
             rounded="rounded-large"
             textColor="text-white"
             background="bg-black"
-            fontSize="text-base"
-            padding="md:py-2 md:px-5 py-1 px-3"
+            fontSize="md:text-base text-xs"
+            padding="sm:py-2 sm:px-5 py-1 px-3"
             hover="hover:opacity-80"
           />
         </div>

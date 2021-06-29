@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 import StripeImage from "assets/images/projects/stripe.png";
-import DesktopImage from "assets/images/projects/Desktop.png";
+// import DesktopImage from "assets/images/projects/Desktop.png";
 
 import Project from "./Project";
 
@@ -12,22 +12,21 @@ const projects = [
     secondaryText:
       "Cloned the famous Stripe website as part of design exercise.",
     wrapperColorClass: "bg-light-pink",
-    projectLink: "#",
-    projectLink: "#",
+    projectLink: "https://stripe-clone-one.vercel.app/",
     tech: ["TailwindCSS", "NextJS", "React"],
     image: StripeImage,
   },
-  {
-    id: "2",
-    primaryText: "Stripe Clone",
-    secondaryText:
-      "Cloned the famous Stripe website as part of design exercise.",
-    wrapperColorClass: "bg-light-green",
+  // {
+  //   id: "2",
+  //   primaryText: "Stripe Clone",
+  //   secondaryText:
+  //     "Cloned the famous Stripe website as part of design exercise.",
+  //   wrapperColorClass: "bg-light-green",
 
-    projectLink: "#",
-    tech: ["TailwindCSS", "NextJS", "React"],
-    image: DesktopImage,
-  },
+  //   projectLink: "#",
+  //   tech: ["TailwindCSS", "NextJS", "React"],
+  //   image: DesktopImage,
+  // },
 ];
 
 const ProjectsSection = ({ addToRefs }) => {

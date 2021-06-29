@@ -1,7 +1,7 @@
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const animateFooterOnScroll = (revealRef, updateLoco, mainItem) => {
+const animateFooterOnScroll = (footerRef, mainItem) => {
   const tl = gsap.from(".built-with-text", {
     opacity: 0,
     ease: Power3.easeInOut,
@@ -9,16 +9,12 @@ const animateFooterOnScroll = (revealRef, updateLoco, mainItem) => {
   });
 
   ScrollTrigger.create({
-    trigger: revealRef.current,
+    trigger: footerRef.current,
     start: "top-=400 center",
-
     scroller: mainItem,
     animation: tl,
     toggleActions: "play none none none",
   });
-
-  // update loco
-  updateLoco();
 };
 
 export default animateFooterOnScroll;

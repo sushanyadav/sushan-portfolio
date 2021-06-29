@@ -1,4 +1,9 @@
-export const scrollToProjects = (st, scrollTo) => {
+// helper function
+const scrollTo = (st, scrollDistance) => {
+  st.scroll(scrollDistance);
+};
+
+export const scrollToNavigationItem = (st) => {
   // projects
   const projectsEl = document.getElementById("projects");
   const projectsDistance = projectsEl.getBoundingClientRect().top - 40;
@@ -20,14 +25,24 @@ export const scrollToProjects = (st, scrollTo) => {
     e.preventDefault();
     scrollTo(st, projectsDistance);
   });
-  // project nav item
+  // about nav item
   aboutNav.addEventListener("click", function (e) {
     e.preventDefault();
     scrollTo(st, aboutDistance);
   });
-  // project nav item
+  // contact nav item
   contactNav.addEventListener("click", function (e) {
     e.preventDefault();
     scrollTo(st, contactDistance);
+  });
+};
+
+export const scrollToTop = (st) => {
+  const scrollToTopButtonEl = document.getElementById("scrollToTop");
+
+  // scroll to top button
+  scrollToTopButtonEl.addEventListener("click", function (e) {
+    e.preventDefault();
+    scrollTo(st, 0);
   });
 };

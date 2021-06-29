@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
@@ -16,19 +15,21 @@ const Project = ({
   return (
     <div
       ref={addToRefs}
-      className={`container overflow-hidden opacity-0 flex  items-start  justify-between w-full flex-col sm:flex-row gap-8 md:gap-16`}
+      className={`container overflow-hidden opacity-0 flex  items-start  justify-between w-full flex-col sm:flex-row gap-8 md:gap-6 lg:gap-10 xl:gap-16`}
     >
-      <div>
+      <div className="w-full lg:w-8/12 xl:w-auto">
         <div className="overflow-hidden">
-          <h3 className="text-gray-900 font-semibold text-1.5xl md:text-4.5xl">
+          <h3 className="text-gray-900 font-semibold text-1.5xl lg:text-3xl xl:text-4.5xl">
             {primaryText}
           </h3>
         </div>
         <div className="overflow-hidden">
-          <p className="text-gray-600 text-base md:text-2xl">{secondaryText}</p>
+          <p className="text-gray-600 text-base mt-0 lg:mt-2 xl:mt-0 lg:text-xl xl:text-2xl">
+            {secondaryText}
+          </p>
         </div>
 
-        <div className="mt-5 text-sm font-medium flex gap-2">
+        <div className="mt-5 sm:mt-3 lg:mt-4 xl:mt-5 text-sm font-medium flex gap-2">
           {tech.map((techNames) => {
             return (
               <span
@@ -41,16 +42,21 @@ const Project = ({
             );
           })}
         </div>
-        <div className="mt-7">
-          <Link href={projectLink}>
-            <a className="inline-block sm:w-auto w-full">
-              <Button text="View Project" outline="border border-pink-600" />
-            </a>
-          </Link>
+        <div className="mt-7 sm:mt-4 xl:mt-7">
+          {/* <Link href={projectLink}> */}
+          <a
+            target="_blank"
+            href={projectLink}
+            className="inline-block sm:w-auto w-full"
+            rel="noreferrer"
+          >
+            <Button text="View Project" outline="border border-pink-600" />
+          </a>
+          {/* </Link> */}
         </div>
       </div>
       <div
-        className={`${wrapperColorClass} overflow-hidden p-4 md:p-8 relative image-wrapper w-full`}
+        className={`${wrapperColorClass} w-full lg:w-8/12 xl:w-full overflow-hidden p-4 md:p-8 relative image-wrapper`}
       >
         <div className={`${wrapperColorClass} absolute inset-0 z-10`}></div>
 

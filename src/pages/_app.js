@@ -4,6 +4,8 @@ import Head from "next/head";
 import PropTypes from "prop-types";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+import { scrollToTop, scrollToNavigationItem } from "utils/scrollTo";
+
 import { Cursor } from "components/Icons";
 import ScrollToTopButton from "components/ScrollToTopButton";
 import Layout from "components/Layout";
@@ -14,7 +16,7 @@ import Header from "components/Layout/Header";
 import animateFooterOnScroll from "animations/footer";
 // import animateHeaderOnScroll from "animations/header";
 
-import { setLocoMotiveWithScrollTrigger } from "utils/animations";
+import { setLocoMotiveWithScrollTrigger } from "utils/setLocoMotiveWithScrollTrigger";
 
 import "assets/scss/main.scss";
 
@@ -133,26 +135,33 @@ function MyApp({ Component, pageProps }) {
         }
       });
 
-      const scrollTo = (st, scrollDistance) => {
-        st.scroll(scrollDistance);
-      };
-
       const updateLoco = setLocoMotiveWithScrollTrigger(
         locoScroll,
         scrollItem.current
       );
 
-      animateFooterOnScroll(
-        footerRef,
-        updateLoco,
-        scrollItem.current,
-        scrollTo
-      );
-
+      //* ANIMATION (BEFORE UPDATING LOCOMOTIVE SCROLL)
+      animateFooterOnScroll(footerRef, scrollItem.current);
       //  animateHeaderOnScroll(updateLoco, scrollItem.current, isSmallDevice);
 
+      // scroll trigger for navigation scroll
+      const st = ScrollTrigger.create({
+        start: "top center",
+        scroller: scrollItem.current,
+        toggleActions: "play none none none",
+      });
+
+      // Navigation Scroll
+      scrollToNavigationItem(st);
+      // Scroll to top
+      scrollToTop(st);
+
+      //* UPDATING LOCOMOTIVE SCROLL AFTER (ANIMATION ABOVE)
+      updateLoco();
+
       if (componentRef.current?.handlePageAnimations) {
-        componentRef.current.handlePageAnimations(updateLoco);
+        componentRef.current.handlePageAnimations();
+        updateLoco();
       }
     });
   }, []);

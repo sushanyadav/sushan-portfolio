@@ -4,20 +4,21 @@ import PropTypes from "prop-types";
 
 import getSiteMetaData from "utils/getSiteMetaData";
 
+const {
+  title: siteTitle,
+  description: siteDescription,
+  keywords: siteKeywords,
+  author: siteAuthor,
+  url: siteUrl,
+} = getSiteMetaData();
+
+const defaultCoverImage = "img/profile.png";
+
 const SiteMetaData = ({ title, description, author, image, keywords }) => {
   const { pathname } = useRouter();
-  const defaultCoverImage = "https://www.sushan.dev/img/profile.png";
-
-  const {
-    title: siteTitle,
-    description: siteDescription,
-    keywords: siteKeywords,
-    author: siteAuthor,
-    url: siteUrl,
-  } = getSiteMetaData();
 
   const metaDescription = description || siteDescription;
-  const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+  const metaTitle = title || `${title} | ${siteTitle}`;
   const metaAuthor = author || siteAuthor;
   const metaUrl = `${siteUrl}${pathname}` || siteUrl;
   const coverImage = image || defaultCoverImage;
@@ -37,10 +38,7 @@ const SiteMetaData = ({ title, description, author, image, keywords }) => {
         <meta property="og:title" content={metaTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:locale" content="en_US" />
-        <meta
-          property="og:site_name"
-          content="Sushan Yadav - Frontend Developer in Nepal for React / Next App & Web Development"
-        />
+        <meta property="og:site_name" content="Sushan Portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={metaUrl} />
         <meta property="og:image" content={imageUrl} />
@@ -58,13 +56,11 @@ const SiteMetaData = ({ title, description, author, image, keywords }) => {
 };
 
 SiteMetaData.defaultProps = {
-  title:
-    "Sushan Yadav - Frontend Developer in Nepal for React App & Web Development",
-  description:
-    "Expert Frontend Web Developer in Nepal proficient in NextJS, React, HTML, CSS & JavaScript available for your next website or app.",
-  author: "Sushan Yadav",
-  image: "https://www.sushan.dev/img/profile.png",
-  keywords: `React, Frontend Developer, NextJS, GSAP, Portfolio, Javascript`,
+  title: siteTitle,
+  description: siteDescription,
+  author: siteAuthor,
+  image: defaultCoverImage,
+  keywords: siteKeywords,
 };
 
 SiteMetaData.propTypes = {

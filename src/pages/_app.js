@@ -52,8 +52,24 @@ function MyApp({ Component, pageProps }) {
     const { current: main } = scrollItem;
 
     // removes initial flash
-    gsap.to(main, 0.2, { opacity: 1 });
+    gsap.to(main, 0.6, { opacity: 1 });
   }, []);
+
+  // custom cursor on enter
+  const onEnter = () => {
+    const { current: cursor } = cursorItem;
+
+    cursor.classList.remove("cursor");
+    cursor.classList.add("hidden");
+  };
+
+  // custom cursor on leave
+  const onLeave = () => {
+    const { current: cursor } = cursorItem;
+
+    cursor.classList.remove("hidden");
+    cursor.classList.add("cursor");
+  };
 
   useEffect(() => {
     const { current: cursor } = cursorItem;
@@ -68,20 +84,6 @@ function MyApp({ Component, pageProps }) {
         ease: "sine.out",
       });
     }
-
-    const onEnter = () => {
-      const { current: cursor } = cursorItem;
-
-      cursor.classList.remove("cursor");
-      cursor.classList.add("hidden");
-    };
-
-    const onLeave = () => {
-      const { current: cursor } = cursorItem;
-
-      cursor.classList.remove("hidden");
-      cursor.classList.add("cursor");
-    };
 
     if (document) {
       // cursor
@@ -113,6 +115,23 @@ function MyApp({ Component, pageProps }) {
       });
     }
   }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const scrollBar = document.querySelector(".c-scrollbar_thumb");
+
+      if (scrollBar) {
+        scrollBar.addEventListener("mouseover", onEnter);
+        scrollBar.addEventListener("mouseleave", onLeave);
+
+        scrollBar.style.backgroundColor = darkMode ? "white" : "black";
+      }
+    }, 500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [darkMode]);
 
   useEffect(() => {
     import("locomotive-scroll").then(({ default: Default }) => {
@@ -189,6 +208,7 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
+
       <div
         className={`${
           darkMode ? "dark" : ""

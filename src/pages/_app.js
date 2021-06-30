@@ -250,7 +250,7 @@ function MyApp({ Component, pageProps }) {
 MyApp.defaultProps = {};
 
 MyApp.propTypes = {
-  Component: PropTypes.object.isRequired,
+  Component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
   pageProps: PropTypes.object.isRequired,
 };
 

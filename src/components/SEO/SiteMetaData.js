@@ -6,7 +6,7 @@ import getSiteMetaData from "utils/getSiteMetaData";
 
 const SiteMetaData = ({ title, description, author, image, keywords }) => {
   const { pathname } = useRouter();
-  const defaultCoverImage = "/img/profile.jpg";
+  const defaultCoverImage = "https://www.sushan.dev/img/profile.png";
 
   const {
     title: siteTitle,
@@ -63,7 +63,7 @@ SiteMetaData.defaultProps = {
   description:
     "Expert Frontend Web Developer in Nepal proficient in NextJS, React, HTML, CSS & JavaScript available for your next website or app.",
   author: "Sushan Yadav",
-  image: "/img/profile.jpg",
+  image: "https://www.sushan.dev/img/profile.png",
   keywords: `React, Frontend Developer, NextJS, GSAP, Portfolio, Javascript`,
 };
 

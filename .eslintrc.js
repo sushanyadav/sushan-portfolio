@@ -1,14 +1,16 @@
 module.exports = {
+  ignorePatterns: ["./node_modules", "./.next"],
   env: {
     browser: true,
     es2021: true,
   },
   extends: [
     "next",
-    "next/core-web-vitals",
+    // "next/core-web-vitals",
     "plugin:react/recommended",
     "google",
     "prettier",
+    // "plugin:tailwindcss/recommended",
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -17,7 +19,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: ["react", "tailwindcss"],
   rules: {
     // disables js doc
     "require-jsdoc": 0,
@@ -34,6 +36,9 @@ module.exports = {
         next: ["const", "let", "var"],
       },
     ],
+    "tailwindcss/classnames-order": "warn",
+    // "tailwindcss/no-custom-classname": "warn",
+    "tailwindcss/no-contradicting-classname": "error",
   },
   settings: {
     react: {

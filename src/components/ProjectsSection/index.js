@@ -45,7 +45,7 @@ const ProjectsSection = ({ addToRefs }) => {
           return (
             <div
               key={id}
-              className="py-10 sm:py-20 transition-colors border-b border-gray-100 dark:border-gray-800"
+              className="py-10 sm:py-20 border-b border-gray-100 dark:border-gray-800 transition-colors"
             >
               <Project
                 addToRefs={addToRefs}

@@ -4,7 +4,7 @@ export const ArrowUpIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-4 w-4 stroke-current"
+      className="w-4 h-4 stroke-current"
       fill="none"
       viewBox="0 0 16 16"
     >
@@ -40,7 +40,7 @@ export const MoonIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-4 md:w-5 h-4 md:h-5 text-gray-600 stroke-current hover:text-pink-600 transition-colors duration-300 dark:hover:text-pink-500"
+      className="w-4 md:w-5 h-4 md:h-5 text-gray-600 hover:text-pink-600 dark:hover:text-pink-500 transition-colors duration-300 stroke-current"
       fill="none"
       viewBox="0 0 20 20"
     >
@@ -57,7 +57,7 @@ export const SunIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-4 md:w-5 h-4 text-gray-500 stroke-current md:h-5 hover:text-pink-600 transition-colors duration-300 dark:hover:text-pink-500"
+      className="w-4 md:w-5 h-4 md:h-5 text-gray-500 hover:text-pink-600 dark:hover:text-pink-500 transition-colors duration-300 stroke-current"
       fill="none"
       viewBox="0 0 20 20"
     >
@@ -75,7 +75,7 @@ export const GoToIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-4 h-4 stroke-current group-hover:rotate-45 transition-transform"
+      className="w-4 h-4 transition-transform group-hover:rotate-45 stroke-current"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -132,7 +132,7 @@ export const MailIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6 md:w-8 md:h-8 text-pink-600 dark:text-pink-500 stroke-current cursor-pointer link-icon"
+      className="w-6 md:w-8 h-6 md:h-8 text-pink-600 dark:text-pink-500 cursor-pointer stroke-current link-icon"
       fill="none"
       viewBox="0 0 32 32"
     >
@@ -156,7 +156,7 @@ export const TwitterIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6 text-pink-600 dark:text-pink-500 stroke-current md:w-8 md:h-8 cursor-pointer link-icon"
+      className="w-6 md:w-8 h-6 md:h-8 text-pink-600 dark:text-pink-500 cursor-pointer stroke-current link-icon"
       fill="none"
       viewBox="0 0 32 32"
     >

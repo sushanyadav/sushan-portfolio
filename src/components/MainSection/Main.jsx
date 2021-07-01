@@ -78,28 +78,28 @@ const Main = () => {
   }, []);
 
   return (
-    <div className="main-section border-b transition-colors border-gray-100 dark:border-gray-800">
+    <div className="border-b border-gray-100 dark:border-gray-800 transition-colors main-section">
       {/* spacer for navbar  start*/}
       <div className="h-14.5 sm:h-22" />
       {/* spacer for navbar end*/}
-      <main className="py-16 md:py-28 lg:py-32 xl:py-45 container transition-colors text-gray-900 dark:text-gray-50">
-        <h1 className=" font-semibold overflow-hidden text-2xl md:text-4xl lg:text-5xl xl:text-5.5xl">
-          <span className="hi-text inline-block">Hi! </span>
+      <main className="container py-16 md:py-28 lg:py-32 xl:py-45 text-gray-900 dark:text-gray-50 transition-colors">
+        <h1 className="overflow-hidden text-2xl md:text-4xl lg:text-5xl xl:text-5.5xl font-semibold ">
+          <span className="inline-block hi-text">Hi! </span>
 
-          <span className="i-am-text inline-block ml-2 md:ml-3">
+          <span className="inline-block ml-2 md:ml-3 i-am-text">
             I am Sushan
           </span>
 
-          <span className="text-pink-600 dark:text-pink-500 md:tracking-normal dot-text inline-block">
+          <span className="inline-block md:tracking-normal text-pink-600 dark:text-pink-500 dot-text">
             .
           </span>
 
-          <address className="inline-block not-italic ml-3 md:ml-5 dark:text-gray-500 text-xs md:text-base self-end location-text font-medium">
+          <address className="inline-block self-end ml-3 md:ml-5 text-xs md:text-base not-italic font-medium dark:text-gray-500 location-text">
             📍Nepal
           </address>
         </h1>
         <div className="overflow-hidden">
-          <h2 className="mt-2 front-end-text text-base md:text-xl lg:text-2xl xl:text-3.5xl dark:text-gray-500 text-gray-600 font-normal">
+          <h2 className="mt-2 text-base md:text-xl lg:text-2xl xl:text-3.5xl font-normal text-gray-600 dark:text-gray-500 front-end-text">
             I love building interactive web experiences using technologies such
             as{" "}
             <span className="font-semibold text-gray-900 dark:text-gray-200">
@@ -112,10 +112,10 @@ const Main = () => {
             .
           </h2>
         </div>
-        <div className="mt-6 md:mt-2 lg:mt-4 xl:mt-6 inline-block">
-          <div className="bg-white border border-gray-100 dark:border-gray-700 transition-colors dark:bg-gray-800 flex items-center py-2 px-3 shadow-sm rounded-3xl secondary-text">
-            <div className="w-2 h-2 bg-active rounded-full mr-2"></div>
-            <p className="dark:text-gray-400  font-medium text-sm md:text-base">
+        <div className="inline-block mt-6 md:mt-2 lg:mt-4 xl:mt-6">
+          <div className="flex items-center py-2 px-3 bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm transition-colors secondary-text">
+            <div className="mr-2 w-2 h-2 bg-active rounded-full"></div>
+            <p className="text-sm md:text-base font-medium dark:text-gray-400">
               Currently available for new opportunities
             </p>
           </div>

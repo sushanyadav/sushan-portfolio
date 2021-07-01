@@ -223,14 +223,14 @@ function MyApp({ Component, pageProps }) {
         />
         {/* cursor */}
         <div
-          className="absolute z-50 select-none pointer-events-none opacity-0"
+          className="absolute z-50 opacity-0 pointer-events-none select-none"
           ref={cursorItem}
         >
           <Cursor isTouchDevice={isTouchDevice} />
         </div>
         <div
           ref={scrollItem}
-          className="bg-white dark:bg-black transition-colors opacity-0 font-custom"
+          className="font-custom bg-white dark:bg-black opacity-0 transition-colors"
         >
           <Layout scrollYPosition={scrollYPosition} footerRef={footerRef}>
             <Component

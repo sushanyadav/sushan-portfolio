@@ -15,26 +15,26 @@ const Project = ({
   return (
     <div
       ref={addToRefs}
-      className={`container overflow-hidden opacity-0 flex  items-start  justify-between w-full flex-col sm:flex-row gap-8 md:gap-6 lg:gap-10 xl:gap-16`}
+      className={`container sm:flex-row overflow-hidden opacity-0 flex justify-between w-full flex-col  items-start gap-8 md:gap-6 lg:gap-10 xl:gap-16`}
     >
       <div className="w-full lg:w-8/12 xl:w-auto">
         <div className="overflow-hidden">
-          <h3 className="text-gray-900 dark:text-gray-100 font-semibold text-1.5xl lg:text-3xl xl:text-4.5xl">
+          <h3 className="text-1.5xl lg:text-3xl xl:text-4.5xl font-semibold text-gray-900 dark:text-gray-100">
             {primaryText}
           </h3>
         </div>
         <div className="overflow-hidden">
-          <p className="text-gray-600 dark:text-gray-500 text-base mt-0 lg:mt-2 xl:mt-0 lg:text-xl xl:text-2xl">
+          <p className="mt-0 lg:mt-2 xl:mt-0 text-base lg:text-xl xl:text-2xl text-gray-600 dark:text-gray-500">
             {secondaryText}
           </p>
         </div>
 
-        <div className="mt-5 sm:mt-3 dark:text-gray-400 lg:mt-4 xl:mt-5 text-sm font-medium flex gap-2">
+        <div className="flex gap-2 mt-5 sm:mt-3 lg:mt-4 xl:mt-5 text-sm font-medium dark:text-gray-400">
           {tech.map((techNames) => {
             return (
               <span
                 style={{ cursor: "none" }}
-                className="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 px-3 py-2 rounded-extra-large inline-block"
+                className="inline-block py-2 px-3 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 rounded-extra-large"
                 key={techNames}
               >
                 {techNames}
@@ -47,7 +47,7 @@ const Project = ({
           <a
             target="_blank"
             href={projectLink}
-            className="inline-block sm:w-auto w-full"
+            className="inline-block w-full sm:w-auto"
             rel="noreferrer"
           >
             <Button

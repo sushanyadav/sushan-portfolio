@@ -3,39 +3,24 @@
 
 echo '🏗️👷 Styling, testing and building your project before committing'
 
+#lint-staged
+npx lint-staged ||
+(
+    echo 'Couldnt run lint-staged.';
+    false;
+)
+
 #next-lint
 npm run next-lint ||
 (
-    echo 'Couldnt run next lint.';
-    false;
-)
-
-#prettier-quick
-npm run prettier-quick ||
-(
-    echo 'Couldnt run prettier quick.';
-    false;
-)
-
-#fix lint error
-npm run lint-fix ||
-(
-    echo 'There are some unfixable problems
-            Lint fix Failed. Run npm run lint, check error, fix it and try commit again.';
-    false;
-)
-
-#formats using prettier
-npm run format ||
-(
-    echo 'Prettier Format Failed. Run npm run format, check error, fix it and try commit again.';
+    echo 'next-lint Check Failed. Run npm run next-lint, add changes and try commit again.';
     false;
 )
 
 #check Prettier standards
-npm run check-format ||
+npm run check-prettier-format ||
 (
-    echo 'Prettier Check Failed. Run npm run format, add changes and try commit again.';
+    echo 'Prettier Check Failed. Run npm run check-prettier-format, add changes and try commit again.';
     false;
 )
 
@@ -46,17 +31,5 @@ npm run check-lint ||
         false; 
 )
 
-
 # If everything passes... Now we can commit
-# echo '🤔🤔🤔🤔... Alright.... Code looks good to me... Trying to build now. 🤔🤔🤔🤔'
-
-# npm run build ||
-# (
-#     echo '❌👷🔨❌ Better call Bob... Because your build failed ❌👷🔨❌
-#             Next build failed: View the errors above to see why. 
-#     '
-#     false;
-# )
-
-# If everything passes... Now we can commit
-echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'
+echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'npx lint-staged

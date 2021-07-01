@@ -6,11 +6,11 @@ const AboutSection = ({ aboutRef }) => {
   return (
     <section
       id="about"
-      className="py-10 lg:py-16 xl:py-20 text-md lg:text-xl xl:text-2.5xl border-b border-gray-100 dark:border-gray-800 text-gray-700 transition-colors dark:text-gray-500"
+      className="py-10 lg:py-16 xl:py-20 text-md lg:text-xl xl:text-2.5xl text-gray-700 dark:text-gray-500 border-b border-gray-100 dark:border-gray-800 transition-colors"
     >
       <div ref={aboutRef} className="container">
         <div className="overflow-hidden">
-          <h1 className="text-gray-900 dark:text-gray-100 text-1.3xl lg:text-3xl xl:text-4.5xl font-semibold ">
+          <h1 className="text-1.3xl lg:text-3xl xl:text-4.5xl font-semibold text-gray-900 dark:text-gray-100 ">
             A little about me
           </h1>
         </div>
@@ -24,7 +24,7 @@ const AboutSection = ({ aboutRef }) => {
               library.
             </p>
           </div>
-          <div className="mt-8 overflow-hidden">
+          <div className="overflow-hidden mt-8">
             <p>
               Fast forward to 2021, I have finally polished and developed
               expertise in a lot of frontend skills and I am ready to take on
@@ -39,7 +39,7 @@ const AboutSection = ({ aboutRef }) => {
         </div>
 
         <div id="contact" className="mt-8">
-          <p className="dark:text-gray-400 text-gray-800 font-medium inline-block mb-8">
+          <p className="inline-block mb-8 font-medium text-gray-800 dark:text-gray-400">
             So, if you like my work and feel like you have a role that could
             fit, feel free to reach out.
           </p>

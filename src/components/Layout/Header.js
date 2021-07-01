@@ -9,7 +9,7 @@ import { DownloadIcon, MoonIcon, SunIcon } from "components/Icons";
 const NavItems = ({ activeLink }) => {
   return (
     <nav className="flex-grow">
-      <ul className="flex items-center justify-center h-full font-medium  text-xs md:text-base leading-8">
+      <ul className="flex justify-center items-center h-full text-xs md:text-base font-medium leading-8">
         {/* 1rem sm:3rem md:4rem */}
         <li>
           <Link href="#projects">
@@ -137,24 +137,24 @@ const Header = ({ scrollYPosition, darkMode, setDarkMode }) => {
   return (
     <section
       ref={header}
-      className="opacity-0 border-b transition-colors bg-white dark:bg-black border-gray-100 dark:border-gray-800 z-10 h-14.5 sm:h-22 fixed top-0 left-0 w-full navigation overflow-y-hidden"
+      className="overflow-y-hidden fixed top-0 left-0 z-10 w-full h-14.5 sm:h-22 bg-white dark:bg-black border-b border-gray-100 dark:border-gray-800 opacity-0 transition-colors navigation"
     >
-      <header className="container h-full flex justify-between items-center">
+      <header className="container flex justify-between items-center h-full">
         <Link href="/">
           <a>
             <div
               style={{
                 background: "linear-gradient(180deg, #FFA3D0 0%, #FFE1F0 100%)",
               }}
-              className="rounded-full w-6 h-6 md:h-10 md:w-10 flex-none"
+              className="flex-none w-6 md:w-10 h-6 md:h-10 rounded-full"
             ></div>
           </a>
         </Link>
         <NavItems activeLink={activeLink} />
-        <div className="flex flex-none space-x-2 md:space-x-8 items-center justify-center">
+        <div className="flex flex-none justify-center items-center space-x-2 md:space-x-8">
           <button
             onClick={handleDarkMode}
-            className="focus:outline-none inline-block p-2"
+            className="inline-block p-2 focus:outline-none"
           >
             {darkMode ? <SunIcon /> : <MoonIcon />}
           </button>

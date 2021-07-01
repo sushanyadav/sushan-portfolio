@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import StripeImage from "assets/images/projects/stripe.png";
+// import StripeImage from "assets/images/projects/stripe.png";
 // import DesktopImage from "assets/images/projects/Desktop.png";
 
 import Project from "./Project";
@@ -14,7 +14,8 @@ const projects = [
     wrapperColorClass: "bg-light-pink",
     projectLink: "https://stripe-clone-one.vercel.app/",
     tech: ["TailwindCSS", "NextJS", "React"],
-    image: StripeImage,
+    // image: StripeImage,
+    image: "/img/stripe.png",
   },
   // {
   //   id: "2",

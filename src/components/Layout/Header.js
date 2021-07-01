@@ -137,7 +137,7 @@ const Header = ({ scrollYPosition, darkMode, setDarkMode }) => {
   return (
     <section
       ref={header}
-      className="overflow-y-hidden fixed top-0 left-0 z-10 w-full h-14.5 sm:h-22 bg-white dark:bg-black border-b border-gray-100 dark:border-gray-800 opacity-0 transition-colors navigation"
+      className="overflow-y-hidden fixed top-0 left-0 z-10 w-full h-14.5 sm:h-22 bg-white dark:bg-black border-b border-gray-100 dark:border-gray-800 opacity-0 transition-colors no-scrollbar navigation"
     >
       <header className="container flex justify-between items-center h-full">
         <Link href="/">

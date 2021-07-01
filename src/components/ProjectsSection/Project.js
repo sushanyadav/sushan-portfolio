@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import PropTypes from "prop-types";
 
 import Button from "components/Button";
@@ -62,13 +62,8 @@ const Project = ({
         className={`${wrapperColorClass} w-full lg:w-8/12 xl:w-full overflow-hidden p-4 md:p-8 relative image-wrapper`}
       >
         <div className={`${wrapperColorClass} absolute inset-0 z-10`}></div>
-
-        <Image
-          src={image}
-          alt={primaryText}
-          layout="responsive"
-          quality={100}
-        />
+        {/* eslint-disable-next-line */}
+        <img src={image} alt={primaryText} />
       </div>
     </div>
   );
@@ -83,7 +78,7 @@ Project.propTypes = {
   secondaryText: PropTypes.string.isRequired,
   projectLink: PropTypes.string.isRequired,
   wrapperColorClass: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
+  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   tech: PropTypes.arrayOf(PropTypes.string).isRequired,
   addToRefs: PropTypes.func,
 };

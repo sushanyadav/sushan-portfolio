@@ -1,3 +1,3 @@
-##Personal portfolio
+## Personal portfolio
 
 > made using NextJS, TailwindCSS and GSAP.

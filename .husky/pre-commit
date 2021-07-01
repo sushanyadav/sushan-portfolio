@@ -17,13 +17,6 @@ npm run next-lint ||
     false;
 )
 
-#check Prettier standards
-npm run check-prettier-format ||
-(
-    echo 'Prettier Check Failed. Run npm run check-prettier-format, add changes and try commit again.';
-    false;
-)
-
 #check ESLint Standards
 npm run check-lint ||
 (

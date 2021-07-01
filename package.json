@@ -8,15 +8,12 @@
     "start": "next start",
     "next-lint": "next lint",
     "lint-fix": "eslint --cache --fix .",
-    "prettier-format": "prettier --write .",
-    "check-prettier-format": "prettier --check .",
     "check-lint": "eslint .",
-    "test-all-and-build": "npm run next-lint && npm run check-lint && npm run check-prettier-format && npm run build",
+    "test-all-and-build": "npm run next-lint && npm run check-lint && npm run build",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,jsx}": "npm run lint-fix",
-    "*.{js,jsx,css,scss,md}": "npm run prettier-format"
+    "*.{js,jsx,css,scss,md}": "npm run lint-fix"
   },
   "dependencies": {
     "gsap": "^3.7.0",
@@ -32,6 +29,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-config-next": "^11.0.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-tailwindcss": "^1.13.4",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",

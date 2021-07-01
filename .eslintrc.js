@@ -6,10 +6,10 @@ module.exports = {
   },
   extends: [
     "next",
-    // "next/core-web-vitals",
+    "next/core-web-vitals",
     "plugin:react/recommended",
     "google",
-    "prettier",
+    "plugin:prettier/recommended",
     // "plugin:tailwindcss/recommended",
   ],
   parserOptions: {
@@ -19,8 +19,9 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react", "tailwindcss"],
+  plugins: ["react", "prettier", "tailwindcss"],
   rules: {
+    "no-console": ["warn", { allow: ["warn"] }],
     // disables js doc
     "require-jsdoc": 0,
     // disables react imports
@@ -38,7 +39,19 @@ module.exports = {
     ],
     "tailwindcss/classnames-order": "warn",
     // "tailwindcss/no-custom-classname": "warn",
-    "tailwindcss/no-contradicting-classname": "error",
+    "tailwindcss/no-contradicting-classname": "warn",
+
+    //* prettier config
+    "prettier/prettier": [
+      "warn",
+      {
+        endOfLine: "auto",
+        singleQuote: false,
+        printWidth: 80,
+        tabWidth: 2,
+        trailingComma: "es5",
+      },
+    ],
   },
   settings: {
     react: {

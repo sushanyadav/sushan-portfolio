@@ -5,12 +5,13 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "next",
-    // "next/core-web-vitals",
-    "plugin:react/recommended",
     "google",
-    "prettier",
-    // "plugin:tailwindcss/recommended",
+    "next",
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/react",
+    "plugin:import/recommended",
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -19,12 +20,16 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react", "tailwindcss"],
+  plugins: ["react", "import", "prettier", "tailwindcss"],
   rules: {
-    // disables js doc
+    "no-console": ["warn", { allow: ["warn"] }],
+
+    //* disables js doc
     "require-jsdoc": 0,
-    // disables react imports
+
+    //* disables react imports
     "react/react-in-jsx-scope": "off",
+
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "padding-line-between-statements": [
       "error",
@@ -37,10 +42,67 @@ module.exports = {
       },
     ],
     "tailwindcss/classnames-order": "warn",
-    // "tailwindcss/no-custom-classname": "warn",
-    "tailwindcss/no-contradicting-classname": "error",
+    "tailwindcss/no-contradicting-classname": "warn",
+
+    //* import config
+    "import/order": [
+      "warn",
+      {
+        pathGroups: [
+          {
+            pattern: "components/**",
+            group: "external",
+            position: "after",
+          },
+          {
+            pattern: "hooks/**",
+            group: "external",
+            position: "after",
+          },
+          {
+            pattern: "scrollTriggerAnimations/**",
+            group: "external",
+            position: "after",
+          },
+          {
+            pattern: "utils/**",
+            group: "external",
+            position: "after",
+          },
+          {
+            pattern: "assets/**",
+            group: "external",
+            position: "after",
+          },
+          {
+            pattern: "constants/**",
+            group: "external",
+            position: "after",
+          },
+        ],
+        "newlines-between": "always",
+      },
+    ],
+
+    //* prettier config
+    "prettier/prettier": [
+      "warn",
+      {
+        endOfLine: "auto",
+        singleQuote: false,
+        printWidth: 80,
+        tabWidth: 2,
+        trailingComma: "es5",
+      },
+    ],
   },
   settings: {
+    "import/resolver": {
+      node: {
+        paths: ["src"],
+        extensions: [".js", ".jsx"],
+      },
+    },
     react: {
       version: "latest",
     },

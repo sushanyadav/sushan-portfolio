@@ -4,7 +4,7 @@
 echo '🏗️👷 Styling, testing and building your project before committing'
 
 #lint-staged
-npx lint-staged --allow-empty ||
+npx lint-staged ||
 (
     echo 'Couldnt run lint-staged.';
     false;
@@ -14,13 +14,6 @@ npx lint-staged --allow-empty ||
 npm run next-lint ||
 (
     echo 'next-lint Check Failed. Run npm run next-lint, add changes and try commit again.';
-    false;
-)
-
-#check Prettier standards
-npm run check-prettier-format ||
-(
-    echo 'Prettier Check Failed. Run npm run check-prettier-format, add changes and try commit again.';
     false;
 )
 

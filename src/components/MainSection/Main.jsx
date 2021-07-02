@@ -82,7 +82,7 @@ const Main = () => {
       {/* spacer for navbar  start*/}
       <div className="h-14.5 sm:h-22" />
       {/* spacer for navbar end*/}
-      <main className="container py-16 md:py-28 lg:py-32 xl:py-45 text-gray-900 dark:text-gray-50 transition-colors">
+      <main className="container py-16 md:py-28 lg:py-32 text-gray-900 dark:text-gray-50 transition-colors xl:py-45">
         <h1 className="overflow-hidden text-2xl md:text-4xl lg:text-5xl xl:text-5.5xl font-semibold ">
           <span className="inline-block hi-text">Hi! </span>
 

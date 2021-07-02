@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 const skillsets = [
   { name: "Languages", skills: ["JavaScript(ES6)"] },
   {

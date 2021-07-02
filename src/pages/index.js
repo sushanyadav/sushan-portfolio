@@ -1,15 +1,15 @@
 import { useRef, forwardRef, useImperativeHandle } from "react";
 import PropTypes from "prop-types";
 
-import { animateProjectsOnScroll } from "scrollTriggerAnimations/projects";
-import animateAboutMeOnScroll from "scrollTriggerAnimations/about";
-import animateSkillSetOnScroll from "scrollTriggerAnimations/skillset";
-
 import Main from "components/MainSection/Main";
 import ProjectsSection from "components/ProjectsSection";
 import AboutSection from "components/AboutSection";
 import SkillsetSection from "components/SkillsetSection";
 import SiteMetaData from "components/SEO/SiteMetaData";
+
+import animateSkillSetOnScroll from "scrollTriggerAnimations/skillset";
+import animateAboutMeOnScroll from "scrollTriggerAnimations/about";
+import { animateProjectsOnScroll } from "scrollTriggerAnimations/projects";
 
 const HomePage = forwardRef((props, ref) => {
   const projectsRef = useRef();

@@ -4,19 +4,18 @@ import Head from "next/head";
 import PropTypes from "prop-types";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { scrollToTop, scrollToNavigationItem } from "utils/scrollTo";
-
+import Header from "components/Layout/Header";
 import { Cursor } from "components/Icons";
 import ScrollToTopButton from "components/ScrollToTopButton";
 import Layout from "components/Layout";
-import Header from "components/Layout/Header";
-
-// import useMediaQuery from "hooks/useMediaQuery";
 
 import animateFooterOnScroll from "scrollTriggerAnimations/footer";
-// import animateHeaderOnScroll from "animations/header";
 
+import { scrollToTop, scrollToNavigationItem } from "utils/scrollTo";
 import { setLocoMotiveWithScrollTrigger } from "utils/setLocoMotiveWithScrollTrigger";
+
+// import useMediaQuery from "hooks/useMediaQuery";
+// import animateHeaderOnScroll from "scrollTriggerAnimations/header";
 
 import "assets/scss/main.scss";
 

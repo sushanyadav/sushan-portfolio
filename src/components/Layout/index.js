@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import Footer from "components/Layout/Footer";
 
-const Layout = ({ children, footerRef, scrollYPosition }) => {
+const Layout = ({ children, footerRef }) => {
   return (
     <>
       {children}
@@ -22,7 +22,6 @@ Layout.propTypes = {
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.any }),
   ]),
-  scrollYPosition: PropTypes.number.isRequired,
 };
 
 export default Layout;

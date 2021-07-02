@@ -4,7 +4,7 @@
 echo '🏗️👷 Styling, testing and building your project before committing'
 
 #lint-staged
-npx lint-staged ||
+npx lint-staged --allow-empty ||
 (
     echo 'Couldnt run lint-staged.';
     false;

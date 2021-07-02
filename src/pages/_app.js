@@ -212,7 +212,7 @@ function MyApp({ Component, pageProps }) {
       <div
         className={`${
           darkMode ? "dark" : ""
-        } selection:bg-pink-500 selection:text-white`}
+        } selection:bg-pink-500 selection:text-white font-custom`}
         style={{ cursor: !isTouchDevice ? "none" : "auto" }}
       >
         {/* smooth scroll component */}
@@ -230,9 +230,9 @@ function MyApp({ Component, pageProps }) {
         </div>
         <div
           ref={scrollItem}
-          className="font-custom bg-white dark:bg-black opacity-0 transition-colors"
+          className="bg-white dark:bg-black opacity-0 transition-colors "
         >
-          <Layout scrollYPosition={scrollYPosition} footerRef={footerRef}>
+          <Layout footerRef={footerRef}>
             <Component
               scrollItem={scrollItem}
               ref={componentRef}

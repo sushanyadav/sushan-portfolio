@@ -6,7 +6,7 @@ module.exports = {
   },
   extends: [
     "next",
-    // "next/core-web-vitals",
+    "next/core-web-vitals",
     "plugin:react/recommended",
     "google",
     "prettier",

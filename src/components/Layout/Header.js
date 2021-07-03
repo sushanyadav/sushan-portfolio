@@ -10,7 +10,6 @@ const NavItems = ({ activeLink }) => {
   return (
     <nav className="flex-grow">
       <ul className="flex justify-center items-center h-full text-xs md:text-base font-medium leading-8">
-        {/* 1rem sm:3rem md:4rem */}
         <li>
           <Link href="#projects">
             <a

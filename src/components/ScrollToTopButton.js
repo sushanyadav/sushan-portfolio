@@ -29,7 +29,7 @@ const ScrollToTopButton = ({ showScrollToTopButton }) => {
         id="scrollToTop"
         className="flex justify-center items-center p-3 text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm transition cursor-pointer focus:outline-none "
       >
-        <ArrowUpIcon />{" "}
+        <ArrowUpIcon />
         <span className="hidden md:block ml-2">Scroll to top</span>
       </button>
     </div>

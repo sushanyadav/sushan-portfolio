@@ -62,9 +62,11 @@ const Project = ({
         className={`${wrapperColorClass} w-full lg:w-8/12 xl:w-full overflow-hidden p-4 md:p-8 relative image-wrapper`}
       >
         <div className={`${wrapperColorClass} absolute inset-0 z-10`}></div>
-        <video preload="auto" loop muted className="w-full">
-          <source src="/videos/stripe.mp4" />
-        </video>
+        <div className="overflow-hidden">
+          <video preload="auto" loop muted className="w-full h-full">
+            <source src="/videos/stripe.mp4" />
+          </video>
+        </div>
         {/* <Image
           src={image}
           alt={primaryText}

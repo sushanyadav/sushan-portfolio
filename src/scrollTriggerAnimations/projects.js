@@ -35,7 +35,7 @@ const projectScrollTrigger = (
 export const animateProjectsOnScroll = (projectsRef, scroller) => {
   projectsRef.current.forEach((el, index) => {
     const imageWrapper = el.lastChild.firstChild;
-    const video = el.lastChild.lastChild;
+    const video = el.lastChild.lastChild.firstChild;
     const primaryTextEl = el.firstChild.firstChild.firstChild;
     const secondaryTextEl = el.firstChild.children[1].firstChild;
     const techStack = el.firstChild.children[2];
@@ -117,16 +117,17 @@ export const projectsTimeline = (
         height: 0,
         duration: 0.6,
         delay: 0.4,
-        onComplete: () => video.play(),
       },
       "-=1.4"
     )
     .from(
       video,
       {
+        y: 100,
         duration: 0.6,
         opacity: 0,
-        scale: 1.6,
+        scale: 1.2,
+        onComplete: () => video.play(),
       },
       "<"
     );

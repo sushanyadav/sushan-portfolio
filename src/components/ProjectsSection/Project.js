@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import PropTypes from "prop-types";
 
 import Button from "components/Button";
@@ -62,13 +62,15 @@ const Project = ({
         className={`${wrapperColorClass} w-full lg:w-8/12 xl:w-full overflow-hidden p-4 md:p-8 relative image-wrapper`}
       >
         <div className={`${wrapperColorClass} absolute inset-0 z-10`}></div>
-
-        <Image
+        <video preload="auto" loop muted className="w-full">
+          <source src="/videos/stripe.mp4" />
+        </video>
+        {/* <Image
           src={image}
           alt={primaryText}
           layout="responsive"
           quality={100}
-        />
+        /> */}
       </div>
     </div>
   );

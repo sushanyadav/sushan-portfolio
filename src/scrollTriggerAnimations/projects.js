@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const projectScrollTrigger = (
   imageWrapper,
-  image,
+  video,
   primaryTextEl,
   secondaryTextEl,
   techStack,
@@ -18,7 +18,7 @@ const projectScrollTrigger = (
     scroller,
     animation: projectsTimeline(
       imageWrapper,
-      image,
+      video,
       primaryTextEl,
       secondaryTextEl,
       techStack,
@@ -35,7 +35,7 @@ const projectScrollTrigger = (
 export const animateProjectsOnScroll = (projectsRef, scroller) => {
   projectsRef.current.forEach((el, index) => {
     const imageWrapper = el.lastChild.firstChild;
-    const image = el.lastChild.lastChild.lastChild;
+    const video = el.lastChild.lastChild;
     const primaryTextEl = el.firstChild.firstChild.firstChild;
     const secondaryTextEl = el.firstChild.children[1].firstChild;
     const techStack = el.firstChild.children[2];
@@ -43,7 +43,7 @@ export const animateProjectsOnScroll = (projectsRef, scroller) => {
 
     projectScrollTrigger(
       imageWrapper,
-      image,
+      video,
       primaryTextEl,
       secondaryTextEl,
       techStack,
@@ -57,7 +57,7 @@ export const animateProjectsOnScroll = (projectsRef, scroller) => {
 
 export const projectsTimeline = (
   imageWrapper,
-  image,
+  video,
   primaryTextEl,
   secondaryTextEl,
   techStack,
@@ -111,8 +111,25 @@ export const projectsTimeline = (
       },
       "-=0.4"
     )
-    .to(imageWrapper, { height: 0, duration: 0.6, delay: 0.4 }, "-=1.4")
-    .from(image, { duration: 0.6, opacity: 0, scale: 1.6 }, "<");
+    .to(
+      imageWrapper,
+      {
+        height: 0,
+        duration: 0.6,
+        delay: 0.4,
+        onComplete: () => video.play(),
+      },
+      "-=1.4"
+    )
+    .from(
+      video,
+      {
+        duration: 0.6,
+        opacity: 0,
+        scale: 1.6,
+      },
+      "<"
+    );
 
   return tl;
 };

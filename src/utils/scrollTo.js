@@ -8,13 +8,13 @@ export const scrollToNavigationItem = (st) => {
   const projectsEl = document.getElementById("projects");
   const projectsDistance = projectsEl.getBoundingClientRect().top - 40;
 
-  // contact
-  const contactEl = document.getElementById("contact");
-  const contactDistance = contactEl.getBoundingClientRect().top - 80;
-
   // about
   const aboutEl = document.getElementById("about");
   const aboutDistance = aboutEl.getBoundingClientRect().top - 40;
+
+  // contact
+  const contactEl = document.getElementById("contact");
+  const contactDistance = contactEl.getBoundingClientRect().top - 80;
 
   const projectNav = document.querySelectorAll("nav ul li")[0];
   const aboutNav = document.querySelectorAll("nav ul li")[1];

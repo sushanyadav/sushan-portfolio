@@ -94,7 +94,7 @@ const Header = ({ scrollYPosition, darkMode, setDarkMode }) => {
 
       // contact
       const contactEl = document.getElementById("contact");
-      const contactDistance = contactEl.getBoundingClientRect().top - 80;
+      const contactDistance = contactEl.getBoundingClientRect().top - 160;
 
       setDistanceFromTop({ projectsDistance, aboutDistance, contactDistance });
     }

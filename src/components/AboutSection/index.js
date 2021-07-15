@@ -43,7 +43,7 @@ const AboutSection = ({ aboutRef }) => {
             So, if you like my work and feel like you have a role that could
             fit, feel free to reach out.
           </p>
-          <div className="flex gap-10">
+          <div className="flex space-x-10">
             <a
               target="_blank"
               rel="noreferrer"

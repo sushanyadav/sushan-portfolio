@@ -15,7 +15,7 @@ const Project = ({
   return (
     <div
       ref={addToRefs}
-      className={`container sm:flex-row overflow-hidden opacity-0 flex justify-between w-full flex-col  items-start gap-8 md:gap-6 lg:gap-10 xl:gap-16`}
+      className={`container sm:flex-row overflow-hidden opacity-0 flex justify-between w-full flex-col items-start space-x-0 space-y-8 sm:space-y-0 sm:space-x-6 lg:space-x-10 xl:space-x-16`}
     >
       <div className="w-full lg:w-8/12 xl:w-auto">
         <div className="overflow-hidden">
@@ -29,7 +29,7 @@ const Project = ({
           </p>
         </div>
 
-        <div className="flex gap-2 mt-5 sm:mt-3 lg:mt-4 xl:mt-5 text-sm font-medium dark:text-gray-400">
+        <div className="flex mt-5 sm:mt-3 lg:mt-4 xl:mt-5 space-x-2 text-sm font-medium dark:text-gray-400">
           {tech.map((techNames) => {
             return (
               <span

@@ -12,8 +12,8 @@ const projects = [
     secondaryText:
       "Cloned the famous Stripe website as part of design exercise.",
     wrapperColorClass: "bg-light-pink",
-    projectLink: "https://stripe-clone-one.vercel.app/",
-    tech: ["TailwindCSS", "NextJS", "React"],
+    projectLink: "https://stripe-clone-home.netlify.app/",
+    tech: ["HTML", "TailwindCSS", "Javascript"],
     image: StripeImage,
   },
   // {

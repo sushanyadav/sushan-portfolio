@@ -157,16 +157,19 @@ const Header = ({ scrollYPosition, darkMode, setDarkMode }) => {
           >
             {darkMode ? <SunIcon /> : <MoonIcon />}
           </button>
-          <Button
-            Icon={DownloadIcon}
-            text="Resume"
-            rounded="rounded-large"
-            textColor="text-white dark:text-gray-400"
-            background="bg-black dark:bg-gray-800"
-            fontSize="md:text-base text-xs"
-            padding="sm:py-2 sm:px-5 py-1 px-3"
-            hover="hover:bg-pink-600 dark:hover:bg-pink-500 dark:hover:text-white"
-          />
+
+          <a href="/resume.pdf" download="resume.pdf">
+            <Button
+              Icon={DownloadIcon}
+              text="Resume"
+              rounded="rounded-large"
+              textColor="text-white dark:text-gray-400"
+              background="bg-black dark:bg-gray-800"
+              fontSize="md:text-base text-xs"
+              padding="sm:py-2 sm:px-5 py-1 px-3"
+              hover="hover:bg-pink-600 dark:hover:bg-pink-500 dark:hover:text-white"
+            />
+          </a>
         </div>
       </header>
     </section>
